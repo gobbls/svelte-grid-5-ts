@@ -1,50 +1,62 @@
 {
-  "name": "svelte-grid",
-  "version": "5.1.2",
-  "description": "A responsive, draggable and resizable grid layout, for Svelte.",
-  "svelte": "src/index.svelte",
-  "module": "build/index.mjs",
-  "main": "build/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint .",
-    "pretty": "prettier --config .prettierrc --write --svelte-sort-order styles-markup-scripts \"rollup.config.js\" \"package.json\" \"src/**/*.js\" \"www/src/**/**/*.svelte\" \"*.md\" \"src/*.svelte\" \"src/**/*.svelte\" ",
-    "build": "node_modules/.bin/rollup -c",
-    "go": "npm-run-all pretty build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vaheqelyan/svelte-grid.git"
-  },
-  "keywords": [
-    "svelte",
-    "grid",
-    "drag",
-    "draggable",
-    "resize",
-    "resizable",
-    "fluid",
-    "responsive"
-  ],
-  "author": "Vahe Araqelyan <vahe.araqelyan.2013@hotmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vaheqelyan/svelte-grid/issues"
-  },
-  "homepage": "https://github.com/vaheqelyan/svelte-grid#readme",
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "eslint": "^7.13.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.2.0",
-    "prettier-plugin-svelte": "^1.4.1",
-    "rollup": "^2.33.3",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-svelte": "^6.1.1",
-    "svelte": "^3.30.0"
-  },
-  "files": [
-    "src",
-    "build"
-  ]
+	"name": "svelte-grid-5-ts",
+	"license": "MIT",
+	"description": "A responsive, draggable and resizable grid layout written in TypeScript for Svelte 5",
+	"author": "gobbls https://github.com/gobbls/svelte-grid-5-ts",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build && npm run prepack",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"prepack": "svelte-kit sync && svelte-package && publint",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"format": "prettier --write .",
+		"lint": "prettier --check ."
+	},
+	"files": [
+		"dist",
+		"src",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"sideEffects": [
+		"**/*.css"
+	],
+	"svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		}
+	},
+	"peerDependencies": {
+		"svelte": "^5.0.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^7.0.0",
+		"@sveltejs/kit": "^2.47.1",
+		"@sveltejs/package": "^2.5.4",
+		"@sveltejs/vite-plugin-svelte": "^6.2.1",
+		"prettier": "^3.6.2",
+		"prettier-plugin-svelte": "^3.4.0",
+		"publint": "^0.3.14",
+		"svelte": "^5.41.0",
+		"svelte-check": "^4.3.3",
+		"typescript": "^5.9.3",
+		"vite": "^7.1.10"
+	},
+	"keywords": [
+		"svelte",
+		"grid",
+		"drag",
+		"draggable",
+		"resize",
+		"resizable",
+		"fluid",
+		"responsive"
+	]
 }

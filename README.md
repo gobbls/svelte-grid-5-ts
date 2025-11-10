@@ -1,27 +1,8 @@
 # svelte-grid
 
-<p>
-  <a href="https://www.npmjs.com/package/svelte-grid"><img  src="https://img.shields.io/npm/v/svelte-grid?style=for-the-badge"/></a>
-
-<a href="https://bundlephobia.com/result?p=svelte-grid@1.5.0">
-  <img src="https://img.shields.io/bundlephobia/min/svelte-grid?style=for-the-badge"/>
-</a>
-  
-<a href="https://bundlephobia.com/result?p=svelte-grid@1.5.0">
-  <img src="https://img.shields.io/bundlephobia/minzip/svelte-grid?style=for-the-badge"/>
-</a>
-
-<a href="https://svelte-grid.now.sh/" target="_blank">
-	<img src="https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Fsvelte-grid.now.sh%2F">
-</a>
-
-</p>
-
-![](https://res.cloudinary.com/dmtrk3yns/video/upload/q_auto/v1565455366/ice_video_20190810-202954_fuquxt.gif)
-
 ## About
 
-- 100% Svelte (or vanillajs) - no jQuery, no 3rd party dependencies
+- 100% Svelte 5 (or TypeScript) - no jQuery, no 3rd party dependencies
 - Compatible with Sapper (SSR Svelte)
 - Draggable widgets
 - Resizable widgets
@@ -39,5 +20,38 @@
 **via NPM**
 
 ```code
-npm i svelte-grid --save-dev
+npm i svelte-grid-5-ts --save-dev
 ```
+
+---
+
+# Svelte library
+
+## Developing
+
+Install dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```sh
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+
+## Building
+
+To build your library:
+
+```sh
+npm pack
+```
+
+To create a production version of your showcase app:
+
+```sh
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
