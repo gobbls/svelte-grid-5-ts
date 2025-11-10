@@ -15,6 +15,11 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check ."
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gobbls/svelte-grid-5-ts"
+	},
+	"homepage": "https://github.com/gobbls/svelte-grid-5-ts/blob/master/README.md",
 	"files": [
 		"dist",
 		"src",
