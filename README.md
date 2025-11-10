@@ -1,4 +1,6 @@
-# svelte-grid
+# svelte-grid-5-ts, a fork of svelte-grid
+Originally by [valqelyan](https://github.com/valqelyan)
+[svelte-grid](https://github.com/valqelyan/svelte-grid)
 
 ## About
 
