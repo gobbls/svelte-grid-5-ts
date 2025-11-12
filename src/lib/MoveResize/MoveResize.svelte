@@ -309,7 +309,7 @@
 
 <div
 	draggable={false}
-	onpointerdown={item.customDragger && !draggable ? null : pointerdown}
+	onpointerdown={item && item.customDragger ? null : !draggable ? null : pointerdown}
 	class="svlt-grid-item"
 	class:svlt-grid-active={active || (trans && rect)}
 	style:width="{svltGridItemWidth}px"
