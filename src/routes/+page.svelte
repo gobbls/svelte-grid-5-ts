@@ -23,7 +23,8 @@
 					x: (i * 2) % col,
 					y: Math.floor(i / 6) * y,
 					w: 2,
-					h: y
+					h: y,
+					draggable: false 
 				}),
 				id: crypto.randomUUID(),
 				data: ''
@@ -78,13 +79,14 @@
 	rowHeight={50}
 	fillSpace={false}
 >
-	{#snippet children({ movePointerDown, resizePointerDown })}
+	{#snippet children({ movePointerDown, resizePointerDown, dataItem })}
 		<div class="content">
 			<div>balls</div>
 			<!--
 			<div onpointerdown={resizePointerDown}>resizeme</div>
 			<div onpointerdown={movePointerDown}>moveme</div>
 			-->
+			<div>{dataItem.id}</div>
 		</div>
 	{/snippet}
 </Grid>

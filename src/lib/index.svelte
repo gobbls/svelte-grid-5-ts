@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Item, Size, Position } from './types/item';
 	import type { OnResize, OnChange, OnMount, OnPointerUp } from './types/funcs';
-	import type { Snippet } from 'svelte';
+	import { type Snippet, onMount as _onMount } from 'svelte';
 	import {
 		moveItemsAroundItem,
 		moveItem,
@@ -9,42 +9,41 @@
 		specifyUndefinedColumns
 	} from './utils/item';
 	import { getContainerHeight } from './utils/container';
-	import { getColumn, throttle, Throttle } from './utils/other';
-	import { onMount as _onMount } from 'svelte';
+	import { Throttle, throttle, getColumn } from './utils/other';
 	import MoveResize from './MoveResize/MoveResize.svelte';
 
 	interface Props {
-		fillSpace?: boolean;
-		items: Item[];
-		rowHeight: number;
-		cols: number[][];
 		gap?: number[];
+		cols: number[][];
+		items: Item[];
+		sensor?: number;
+		scroller?: HTMLDivElement | undefined;
+		rowHeight: number;
 		fastStart?: boolean;
+		fillSpace?: boolean;
 		throttleUpdate?: number;
 		throttleResize?: number;
-		scroller?: HTMLDivElement | undefined;
-		sensor?: number;
+		onMount?: ({ ...props }: OnMount) => void;
 		onResize?: ({ ...props }: OnResize) => void;
 		onChange?: ({ ...props }: OnChange) => void;
-		onMount?: ({ ...props }: OnMount) => void;
 		onPointerUp?: ({ ...props }: OnPointerUp) => void;
 		children?: Snippet<[any]>;
 	}
 
 	let {
-		fillSpace = false,
-		items = $bindable(),
-		rowHeight,
-		cols,
 		gap = [10, 10],
+		cols,
+		items = $bindable(),
+		sensor = 20,
+		scroller = undefined,
+		rowHeight,
 		fastStart = false,
+		fillSpace = false,
 		throttleUpdate = 100,
 		throttleResize = 100,
-		scroller = undefined,
-		sensor = 20,
+		onMount,
 		onResize,
 		onChange,
-		onMount,
 		onPointerUp,
 		children
 	}: Props = $props();
