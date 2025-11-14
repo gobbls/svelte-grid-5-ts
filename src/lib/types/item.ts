@@ -25,7 +25,7 @@ export interface Value {
 
 export interface Item {
 	id: string;
-	data: string;
+	data: string | object;
 	[key: number]: Value;
 }
 
