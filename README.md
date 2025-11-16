@@ -1,6 +1,22 @@
 # svelte-grid-5-ts, a fork of svelte-grid
-Originally by [valqelyan](https://github.com/valqelyan)
-[svelte-grid](https://github.com/valqelyan/svelte-grid)
+This is a fork of svelte-grid, a project originally by
+[valqelyan](https://github.com/valqelyan)
+([svelte-grid](https://github.com/valqelyan/svelte-grid)).
+
+## Notes
+"svelte-grid-5-ts" (let's call it "SG5" from here on out) aims to do the exact
+same as "svelte-grid" ("SG"), but support the better development experience (IMO)
+that TypeScript sports.
+
+There are currently no major refactoring done to the projects core functionality,
+but these may be relevant to you:
+
+- My personal formatting preferences are applied (.prettierrc).
+- Events are now exposed through function props, instead of event-dispatcher.
+- The types for available events and widget item are available in `/types`.
+
+Other than that, SG5 should pretty much be a drop-in replacement for SG on
+projects converting from an older Svelte codebase to Svelte 5.
 
 ## About
 
@@ -24,36 +40,3 @@ Originally by [valqelyan](https://github.com/valqelyan)
 ```code
 npm i svelte-grid-5-ts --save-dev
 ```
-
----
-
-# Svelte library
-
-## Developing
-
-Install dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
-
-```sh
-npm pack
-```
-
-To create a production version of your showcase app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
