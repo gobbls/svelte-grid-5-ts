@@ -3,7 +3,6 @@ import { findFreeSpaceForItem, normalize, adjust } from './item';
 import { makeMatrixFromItems } from './matrix';
 import { getRowsCount } from './other';
 
-// TODO: Make most of these props derive from 'item' param.
 function makeItem(item: PartialItemValue): Value {
 	const {
 		fixed = false,
