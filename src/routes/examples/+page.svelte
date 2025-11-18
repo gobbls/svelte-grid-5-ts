@@ -10,7 +10,7 @@
 	import Grid from '$lib/index.svelte';
 
 	// The cardcoded columns to span the page.
-	const COL = 16;
+	const COL = 8;
 
 	// NOTE: I have no fucking clue what 1287 does...
 	const cols = [[1287, COL]];
