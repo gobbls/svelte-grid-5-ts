@@ -6,7 +6,8 @@
 {#snippet chevronIcon()}
 	<div class="chevron-icon-wrapper">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-			<!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path
+			<!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+			<path
 				d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
 			/></svg
 		>
@@ -16,7 +17,8 @@
 {#snippet menuIcon()}
 	<div class="menu-icon-wrapper">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-			<!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path
+			<!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+			<path
 				d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
 			/></svg
 		>
@@ -31,25 +33,51 @@
 				<div class="group">
 					<div class="sidebar-main">
 						<a href="/"><strong>Home</strong></a>
-						{@render chevronIcon()}
+						<button>
+							{@render chevronIcon()}
+						</button>
 					</div>
 				</div>
 				<div class="group">
 					<div class="sidebar-main">
 						<a href="/examples"><strong>Examples</strong></a>
-						{@render chevronIcon()}
+						<button>
+							{@render chevronIcon()}
+						</button>
 					</div>
+					<ul><a href="/examples#basic">Basic</a></ul>
+					<ul><a href="/example#gap">Gap</a></ul>
+					<ul><a href="/example#responsive">Responsive</a></ul>
+					<ul><a href="/example#add-remove">Add/Remove</a></ul>
+					<ul><a href="/example#min-max-size">Min/Max size</a></ul>
+					<ul><a href="/example#fixed">Fixed</a></ul>
+					<ul><a href="/example#serialize-restore">Serialize/Restore</a></ul>
+					<ul><a href="/example#events">Events</a></ul>
+					<ul>
+						<a href="/example#responsive-serialize-restore"
+							>Responsive - Serialize/Restore</a
+						>
+					</ul>
+					<ul><a href="/example#custom-dragger">Custom dragger</a></ul>
+					<ul><a href="/example#custom-resizer">Custom resizer</a></ul>
+					<ul><a href="/example#fast-start">Fast start</a></ul>
+					<ul><a href="/example#fill-space">Fill space</a></ul>
+					<ul><a href="/example#autoscroll">Autoscroll</a></ul>
 				</div>
 				<div class="group">
 					<div class="sidebar-main">
 						<a href="/usage"><strong>Usage</strong></a>
-						{@render chevronIcon()}
+						<button>
+							{@render chevronIcon()}
+						</button>
 					</div>
 				</div>
 				<div class="group">
 					<div class="sidebar-main">
 						<a href="/features"><strong>Features</strong></a>
-						{@render chevronIcon()}
+						<button>
+							{@render chevronIcon()}
+						</button>
 					</div>
 				</div>
 			</nav>
@@ -79,6 +107,7 @@
 			'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
 			'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 		--c-base: #1b1b1f;
+		--c-bg-text-code: #0a0a0e;
 		--c-text-link: #dfdfd6;
 		--c-text-link-visited: #cccccc;
 		--c-text-link-hover: #999999;
@@ -154,14 +183,12 @@
 		grid-row: span 2 / span 2;
 		grid-column-start: 2;
 		grid-row-start: 2;
+		overflow-y: scroll;
+		overflow: hidden;
 	}
 
-	article {
-		padding: 10px;
-	}
-
-	nav {
-		font-family: var(--default-font);
+	main article {
+		padding: 10px 20px;
 	}
 
 	a {
@@ -179,10 +206,14 @@
 
 	#page {
 		display: grid;
-		grid-template-columns: 1fr minmax(
-				auto,
-				calc(var(--page-max-width) - var(--left-sidebar))
-			) 1fr;
+		grid-template-columns:
+			1fr minmax(auto, calc(var(--page-max-width) - var(--left-sidebar) - 20px))
+			1fr;
+		/*
+		grid-template-columns:
+			1fr minmax(auto, var(--page-max-width))
+			1fr;
+		*/
 		grid-template-rows: var(--header-height) 1fr;
 		height: 100vh;
 	}
@@ -204,19 +235,31 @@
 		color: var(--c-text-link);
 	}
 
-	#left-sidebar .wrapper .group {
+	#left-sidebar .wrapper nav {
+		font-family: var(--default-font);
+	}
+
+	#left-sidebar .wrapper nav .group {
 		padding: 10px 0;
 		border-top: 1px solid var(--c-group-separator);
 	}
 
-	#left-sidebar .sidebar-main {
+	#left-sidebar .wrapper nav .group ul {
+		color: var(--c-text-link);
+	}
+
+	#left-sidebar .wrapper nav .group .sidebar-main {
 		font-size: 18px;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 	}
 
-	#left-sidebar .sidebar-main .chevron-icon-wrapper {
+	#left-sidebar .wrapper nav .group .sidebar-main button {
+		all: unset;
+	}
+
+	#left-sidebar .wrapper nav .group .sidebar-main button .chevron-icon-wrapper {
 		fill: var(--c-text-link);
 		height: 15px;
 		aspect-ratio: 1 / 1;
