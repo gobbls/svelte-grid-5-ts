@@ -86,8 +86,10 @@
 		--c-bg-navbar: var(--c-base);
 		--c-bg-left-sidebar: #161618;
 		--c-group-separator: #2e2e32;
+
 		--page-min-width: 750px;
 		--page-max-width: 1540px;
+		--left-sidebar: 250px;
 		--header-height: 56px;
 	}
 
@@ -140,7 +142,6 @@
 		&:hover {
 			cursor: pointer;
 		}
-
 	}
 
 	header .wrapper .right {
@@ -178,7 +179,10 @@
 
 	#page {
 		display: grid;
-		grid-template-columns: 1fr minmax(auto, var(--page-max-width)) 1fr;
+		grid-template-columns: 1fr minmax(
+				auto,
+				calc(var(--page-max-width) - var(--left-sidebar))
+			) 1fr;
 		grid-template-rows: var(--header-height) 1fr;
 		height: 100vh;
 	}
@@ -189,7 +193,7 @@
 	}
 
 	#left-sidebar .wrapper {
-		max-width: 250px;
+		max-width: var(--left-sidebar);
 		margin-left: auto;
 		padding: 12px 10px;
 	}
