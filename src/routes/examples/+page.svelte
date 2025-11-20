@@ -65,7 +65,7 @@
 </svelte:head>
 
 <Grid bind:items {cols} gap={[5, 5]} rowHeight={50} fillSpace={false}>
-	{#snippet children({ movePointerDown, resizePointerDown, dataItem })}
+	{#snippet children()}
 		<div class="content"></div>
 	{/snippet}
 </Grid>

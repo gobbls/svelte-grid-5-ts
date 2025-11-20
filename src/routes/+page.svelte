@@ -81,7 +81,13 @@
 	<title>Home</title>
 </svelte:head>
 
-<h1>What is svelte-grid-5-ts?</h1>
+<h1>
+	What is svelte-grid-5-ts?<a
+		aria-label="Permalink to 'What is svelte-grid-5-ts'"
+		class="header-anchor"
+		href="#what-is-svelte-grid-5-ts"
+	></a>
+</h1>
 <p>
 	<strong>svelte-grid-5-ts</strong> (<strong>SG5</strong>), is a
 	<a
@@ -141,13 +147,45 @@
 	h1,
 	p,
 	ol,
+	/*
 	hr,
+	*/
 	.demo {
 		max-width: 760px;
 		margin-left: auto;
 		margin-right: auto;
 		color: var(--c-text-link);
 		font-family: var(--default-font);
+	}
+
+	h1 {
+		position: relative;
+	}
+
+	h1 a.header-anchor {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		margin-left: -0.87em;
+		color: #a8b1ff;
+		font-weight: 500;
+		text-decoration: none;
+		user-select: none;
+		transition:
+			color 0.25s,
+			opacity 0.25s;
+		&:hover {
+			color: #5c73e7;
+		}
+	}
+
+	h1:hover a.header-anchor {
+		opacity: 1;
+	}
+
+	h1 a.header-anchor::before {
+		content: '#';
 	}
 
 	p {
