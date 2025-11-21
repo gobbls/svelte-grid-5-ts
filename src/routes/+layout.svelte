@@ -130,7 +130,7 @@
 		overflow: hidden;
 	}
 
-	main article {
+	main > article {
 		padding: 10px 20px;
 	}
 
@@ -147,7 +147,6 @@
 		background: var(--c-bg-left-sidebar);
 		grid-row: span 3 / span 3;
 	}
-	/************************************************/
 
 	@media screen and (max-width: 750px) {
 		main {
