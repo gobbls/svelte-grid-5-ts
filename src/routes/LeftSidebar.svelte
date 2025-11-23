@@ -11,35 +11,56 @@
 </script>
 
 <script lang="ts">
-	import ChevronIcon from './ChevronIcon.svelte';
 	import { slide } from 'svelte/transition';
+	import { onMount } from 'svelte';
+	import ChevronIcon from './ChevronIcon.svelte';
 
-	let {
-		groups = $bindable([]),
-		title
-	}: {
-		groups: Group[];
+	interface Props {
 		title: string;
-	} = $props();
+		groups: Group[];
+		modal?: boolean;
+	}
+
+	let { title, groups = $bindable(), modal }: Props = $props();
+
+	let thisModal = $state<HTMLDivElement>();
+
+	function toggleGroup(ev: MouseEvent, group: Group) {
+		ev.stopPropagation();
+		group.open = !group.open;
+	}
+
+	onMount(() => {
+		if (modal) {
+			thisModal?.focus();
+		}
+	});
 </script>
 
-<div class="wrapper">
-	<a href="/">
+<div bind:this={thisModal} class="wrapper" class:modal tabindex="-1">
+	<a href="/" class="nav clickable">
 		<h2>{title}</h2>
 	</a>
 	<nav>
 		{#each groups as group}
 			<div class="group">
-				<div class="main">
-					<a href={group.url}><strong>{group.title}</strong></a>
-					<button onclick={() => (group.open = !group.open)}>
+				<div class="title">
+					<a href={group.url} class="nav clickable"><h4>{group.title}</h4></a>
+					<button
+						class="action clickable"
+						onclick={(e) => toggleGroup(e, group)}
+					>
 						<ChevronIcon direction={group.open ? 'down' : 'left'} />
 					</button>
 				</div>
 				{#if group.open}
 					<div class="list" transition:slide={{ duration: 200 }}>
 						{#each group.items as item}
-							<ul><a href={group.url + item.anchor}>{item.title}</a></ul>
+							<ul>
+								<a href={group.url + item.anchor} class="nav sub clickable"
+									><p>{item.title}</p></a
+								>
+							</ul>
 						{/each}
 					</div>
 				{/if}
@@ -49,20 +70,27 @@
 </div>
 
 <style>
-	a,
-	ul {
-		color: var(--c-text-link);
+	a {
 		text-decoration: none;
-	}
-
-	a:hover {
-		color: var(--c-text-link-hover);
+		color: var(--c-text-link);
+		&:hover {
+			color: var(--sg5-c-text-link-hover);
+		}
 	}
 
 	.wrapper {
-		max-width: var(--left-sidebar);
+		box-sizing: border-box;
+		height: 100%;
+		max-width: var(--sg5-left-sidebar);
 		margin-left: auto;
 		padding: 12px 10px;
+		background: var(--sg5-c-bg-left-sidebar);
+		overflow: hidden;
+	}
+
+	.wrapper.modal {
+		max-width: unset !important;
+		width: var(--sg5-left-sidebar);
 	}
 
 	.wrapper > a > h2 {
@@ -71,33 +99,52 @@
 	}
 
 	.wrapper > nav {
-		font-family: var(--default-font);
+		font-family: var(--sg5-default-font);
 	}
 
 	.wrapper > nav > .group {
-		padding: 10px 0;
-		border-top: 1px solid var(--c-group-separator);
+		padding: 5px 0;
+		border-top: 1px solid var(--sg5-c-group-separator);
 	}
 
-	.wrapper > nav > .group > .main {
+	.wrapper > nav > .group > .title {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		font-size: 18px;
 	}
 
-	.wrapper > nav > .group > .main > button {
-		all: unset;
+	.wrapper > nav > .group > .title > a {
+		width: 100%;
+	}
+
+	.wrapper > nav > .group > .title > a > h4 {
+		padding: 5px 0;
+		margin: 0;
+	}
+
+	.wrapper > nav > .group > .title > button {
+		padding: unset;
+		border: none;
+		background: none;
+	}
+
+	.wrapper > nav > .group > .list > ul {
+		padding: 0;
+		margin: 0;
 	}
 
 	/* fixes transition snapping at end of sequence */
 	.wrapper > nav > .group > .list > ul:first-child {
-		padding-top: 16px;
-		margin-top: 0;
+		padding-top: 8px;
 	}
 
 	.wrapper > nav > .group > .list > ul:last-child {
-		padding-bottom: 16px;
-		margin-bottom: 0;
+		padding-bottom: 8px;
+	}
+
+	.wrapper > nav > .group > .list > ul > a > p {
+		padding: 8px 0px 8px 10px;
+		margin: 0;
 	}
 </style>

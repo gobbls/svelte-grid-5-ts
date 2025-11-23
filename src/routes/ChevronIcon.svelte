@@ -13,14 +13,10 @@
 
 <style>
 	.chevron-icon-wrapper {
-		fill: var(--c-text-link);
 		height: 15px;
 		aspect-ratio: 1 / 1;
 		padding: 3px;
-		transition: rotate var(--expanding-transition-time) ease-in-out;
-		&:hover {
-			cursor: pointer;
-		}
+		transition: rotate var(--sg5-expanding-transition-time) ease-in-out;
 	}
 
 	.chevron-icon-wrapper.left {

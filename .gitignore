@@ -1,12 +1,12 @@
 node_modules
 dist
-*.tgz
 
 # Output
 .output
 .vercel
 .netlify
 .wrangler
+*.tgz
 /.svelte-kit
 /build
 
@@ -17,8 +17,7 @@ Thumbs.db
 # Env
 .env
 .env.*
-!.env.example
-!.env.test
+!.env.production
 
 # Vite
 vite.config.js.timestamp-*
