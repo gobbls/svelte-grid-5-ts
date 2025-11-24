@@ -38,14 +38,14 @@
 </script>
 
 <div bind:this={thisModal} class="wrapper" class:modal tabindex="-1">
-	<a href="/" class="nav clickable">
+	<a class="nav clickable" href="/">
 		<h2>{title}</h2>
 	</a>
 	<nav>
 		{#each groups as group}
 			<div class="group">
 				<div class="title">
-					<a href={group.url} class="nav clickable"><h4>{group.title}</h4></a>
+					<a class="nav clickable" href={group.url}><h4>{group.title}</h4></a>
 					<button
 						class="action clickable"
 						onclick={(e) => toggleGroup(e, group)}
@@ -57,9 +57,9 @@
 					<div class="list" transition:slide={{ duration: 200 }}>
 						{#each group.items as item}
 							<ul>
-								<a href={group.url + item.anchor} class="nav sub clickable"
-									><p>{item.title}</p></a
-								>
+								<a class="nav sub clickable" href={group.url + item.anchor}>
+									<p>{item.title}</p>
+								</a>
 							</ul>
 						{/each}
 					</div>
@@ -70,14 +70,6 @@
 </div>
 
 <style>
-	a {
-		text-decoration: none;
-		color: var(--c-text-link);
-		&:hover {
-			color: var(--sg5-c-text-link-hover);
-		}
-	}
-
 	.wrapper {
 		box-sizing: border-box;
 		height: 100%;
