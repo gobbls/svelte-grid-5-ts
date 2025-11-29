@@ -2,9 +2,8 @@
 
 ![Preview of the moving and shifting action.](/static/preview.gif)
 
-This is a fork of svelte-grid, a project originally by
-[valqelyan](https://github.com/valqelyan)
-([svelte-grid](https://github.com/valqelyan/svelte-grid)).
+This is a fork of [svelte-grid](https://github.com/valqelyan/svelte-grid),
+a project originally by [valqelyan](https://github.com/valqelyan).
 
 ## Notes
 
