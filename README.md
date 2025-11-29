@@ -1,9 +1,13 @@
 # svelte-grid-5-ts, a fork of svelte-grid
+
+![Preview of the moving and shifting action.](/assets/preview.gif)
+
 This is a fork of svelte-grid, a project originally by
 [valqelyan](https://github.com/valqelyan)
 ([svelte-grid](https://github.com/valqelyan/svelte-grid)).
 
 ## Notes
+
 "svelte-grid-5-ts" (let's call it "SG5" from here on out) aims to do the exact
 same as "svelte-grid" ("SG"), but support the better development experience (IMO)
 that TypeScript sports.

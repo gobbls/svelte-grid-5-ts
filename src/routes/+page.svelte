@@ -131,8 +131,14 @@
 	</li>
 </ol>
 
+<!--
+<div class="preview">
+	<img alt="feature preview" src="/preview.gif" />
+</div>
+-->
+
 <div class="demo">
-	<Grid bind:items {cols} gap={[2, 2]} rowHeight={50} fillSpace={false}>
+	<Grid bind:items {cols} gap={[2, 2]} rowHeight={50} fillSpace={false} fastStart>
 		{#snippet children({ dataItem })}
 			<div class="item">{dataItem.id}</div>
 		{/snippet}
@@ -210,6 +216,7 @@
 
 	.demo {
 		padding: 5px;
+		margin-top: 20px;
 		border-radius: 10px;
 		background: var(--sg5-c-bg-text-code);
 	}
@@ -230,4 +237,21 @@
 		overflow: hidden;
 		font-size: clamp(0.4em, 1vw + 0.4em, 1em);
 	}
+
+	/*
+	.preview {
+		max-width: 770px;
+		max-height: 160px;
+		margin-left: auto;
+		margin-right: auto;
+		overflow: hidden;
+		border-radius: 10px;
+	}
+
+	.preview img {
+		max-width: 786px;
+		margin-top: -8px;
+		margin-left: -8px;
+	}
+	*/
 </style>
