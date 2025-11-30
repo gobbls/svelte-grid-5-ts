@@ -192,7 +192,7 @@
 		grid-template-columns:
 			1fr minmax(
 				auto,
-				calc(var(--sg5-page-max-width) - var(--sg5-left-sidebar) - 20px)
+				calc(var(--sg5-page-max-width) - var(--sg5-left-sidebar))
 			)
 			1fr;
 		grid-template-rows: var(--sg5-header-height) 1fr;
@@ -211,6 +211,7 @@
 
 	.page > main > article {
 		flex: 1;
+		box-sizing: border-box;
 		padding: 16px 24px;
 		max-width: var(--sg5-page-max-width);
 	}
