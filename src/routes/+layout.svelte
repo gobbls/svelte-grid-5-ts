@@ -219,10 +219,14 @@
 	}
 
 	.page > .header {
+		z-index: 2;
 		grid-column: span 2 / span 2;
 		line-height: var(--sg5-header-height);
 		background: var(--sg5-c-bg-navbar);
 		border-bottom: 1px solid var(--sg5-c-dark-base);
+		box-shadow:
+			0 20px 20px -20px var(--sg5-c-bg-navbar),
+			0 20px 20px -20px var(--sg5-c-bg-navbar);
 	}
 
 	.modal {
