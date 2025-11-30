@@ -63,5 +63,8 @@
 		"resizable",
 		"fluid",
 		"responsive"
-	]
+	],
+	"dependencies": {
+		"highlight.js": "^11.11.1"
+	}
 }

@@ -1,6 +1,11 @@
 <script lang="ts">
 	import Grid from '../lib/index.svelte';
 	import type { Item, Size } from '../lib/types/item';
+	import { onMount } from 'svelte';
+	import hljs from 'highlight.js/lib/core';
+	import javascript from 'highlight.js/lib/languages/xml';
+
+	hljs.registerLanguage('javascript', javascript);
 
 	const COL = 10;
 	const cols = [[200, COL]];
@@ -75,7 +80,145 @@
 			}
 		}
 	]);
+
+	onMount(() => {
+		hljs.highlightAll();
+	});
 </script>
+
+{#snippet stepOne()}
+	<li>
+		Start by importing the component and the <code>Item</code> type, then create
+		a <code>div</code> wrapper for SG5.
+	</li>
+	<pre>
+		<code class="language-html"
+			>&lt;!-- your-component.svelte --&gt;
+
+&lt;script lang="ts"&gt;
+  import &lbrace; Grid &rbrace; from 'svelte-grid-5-ts';
+  import &lbrace; Item &rbrace; from 'svelte-grid-5-ts/types';
+&lt;/script&gt;
+
+&lt;!-- Used to set the size of the grid. --&gt;
+&lt;div class="sg5-wrapper"&gt;&lt;/div&gt;</code
+		>
+	</pre>
+{/snippet}
+
+{#snippet stepTwo()}
+	<li>
+		Specify the specs for the grid, then create an array with a single item. We
+		then bind the items, and send the specs to the component as props.
+	</li>
+	<pre>
+		<code class="language-html"
+			>&lt;!-- your-component.svelte --&gt;
+
+&lt;script lang="ts"&gt;
+  import &lbrace; Grid &rbrace; from 'svelte-grid-5-ts';
+  import &lbrace; Item &rbrace; from 'svelte-grid-5-ts/types';
+
+  const COL = 10;              // The amount of columns for the grid.
+  const cols = [[200, COL]];   // Breakpoints and columns.
+
+  // Here is a quick summary for each property. Check out "Usage" for detailed information.
+
+  // The items to bind. These are dynamically altered during modification.
+  // Think of an "item" as a frame for your widget.
+  const items: Item[] = $state([
+    &lbrace;
+      id: 'move',                      // Has to be unique for each item (a UUID for example).
+      data: '',                        // The data you want to pass to your widget.
+      [COL]: &lbrace;                         // 'COL' is used to match the grid column size.
+      	fixed: false,                  // true = not movable, but resizable.
+      	resizable: true,               // true = resizable, can change dimensions.
+      	draggable: true,               // true = draggable, can be moved.
+      	customDragger: false,          // Use a custom dragger?
+      	customResizer: false,          // Use a custom resizer?
+      	min: &lbrace; w: 1, h: 1 &rbrace;,           // The minimum size of this item.
+      	max: &lbrace;&rbrace; as Size,               // The maximum size of this item.
+      	x: 0,                          // Position or distance from the containers left border.
+      	y: 0,                          // Position or distance from the containers top border.
+      	w: 2,                          // The width, in columns, of the item.
+      	h: 3                           // The height, in rows, of the item.
+      &rbrace;
+    &rbrace;
+  ]);
+&lt;/script&gt;
+
+&lt;div class="sg5-wrapper"&gt;
+  &lt;Grid
+    bind:items
+    &lbrace;cols&rbrace;
+    gap=&lbrace;[2, 2]&rbrace;       &lt;!-- The gap in pixels between items --&gt;
+    rowHeight=&lbrace;50&rbrace;     &lt;!-- The height of each row in pixels --&gt;
+    fillSpace=&lbrace;false&rbrace;  &lt;!-- Shuffle other items to tidy up the available space? --&gt;
+    fastStart          &lt;!-- Disable the animated movement when the component mounts --&gt;
+  &gt;&lt;/Grid&gt;
+&lt;/div&gt;</code
+		>
+	</pre>
+{/snippet}
+
+{#snippet stepThree()}
+	<li>
+		Provide a widget (a <code>div</code> here, for the sake of demo) as a
+		snippet for the item to render. The <code>children</code> snippet returns
+		multiple properties for us to use. Here, we use the <code>dataItem</code>
+		property to receive the ID of our item, to then be used in our passed
+		<code>div</code> to display the ID of the item.
+	</li>
+	<pre>
+		<code class="language-html"
+			>&lt;!-- your-component.svelte --&gt;
+
+&lt;script lang="ts"&gt;
+  import &lbrace; Grid &rbrace; from 'svelte-grid-5-ts';
+  import &lbrace; Item &rbrace; from 'svelte-grid-5-ts/types';
+
+  const COL = 10;
+  const cols = [[200, COL]];
+
+  const items: Item[] = $state([
+    &lbrace;
+      id: 'move',
+      data: '',
+      [COL]: &lbrace;
+      	fixed: false,
+      	resizable: true,
+      	draggable: true,
+      	customDragger: false,
+      	customResizer: false,
+      	min: &lbrace; w: 1, h: 1 &rbrace;,
+      	max: &lbrace;&rbrace; as Size,
+      	x: 0,
+      	y: 0,
+      	w: 2,
+      	h: 3
+      &rbrace;
+    &rbrace;
+  ]);
+&lt;/script&gt;
+
+&lt;div class="sg5-wrapper"&gt;
+  &lt;Grid
+    bind:items
+    &lbrace;cols&rbrace;
+    gap=&lbrace;[2, 2]&rbrace;
+    rowHeight=&lbrace;50&rbrace;
+    fillSpace=&lbrace;false&rbrace;
+    fastStart
+  &gt;
+    &lt;!-- destructure the property for ease of use --&gt;
+    &lbrace;#snippet children(&lbrace; dataItem &rbrace;)&rbrace;
+      &lt;div class="item"&gt;&lbrace;dataItem.id&rbrace;&lt;/div&gt;
+    &lbrace;/snippet&rbrace;
+  &lt;/Grid&gt;
+&lt;/div&gt;</code
+		>
+	</pre>
+{/snippet}
 
 <svelte:head>
 	<title>Home</title>
@@ -83,6 +226,7 @@
 
 <h1>
 	What is svelte-grid-5-ts?<a
+		id="what-is-svelte-grid-5-ts"
 		aria-label="Permalink to 'What is svelte-grid-5-ts'"
 		class="header-anchor"
 		href="#what-is-svelte-grid-5-ts"
@@ -138,12 +282,42 @@
 -->
 
 <div class="demo">
-	<Grid bind:items {cols} gap={[2, 2]} rowHeight={50} fillSpace={false} fastStart>
+	<Grid
+		bind:items
+		{cols}
+		gap={[2, 2]}
+		rowHeight={50}
+		fillSpace={false}
+		fastStart
+	>
 		{#snippet children({ dataItem })}
 			<div class="item">{dataItem.id}</div>
 		{/snippet}
 	</Grid>
 </div>
+
+<hr />
+
+<h1>
+	Getting Started<a
+		id="getting-started"
+		aria-label="Permalink to 'What is svelte-grid-5-ts'"
+		class="header-anchor"
+		href="#getting-started"
+	></a>
+</h1>
+
+<p class="blockquote">
+	If you don't already have Svelte 5 installed, <a
+		href="https://svelte.dev/docs/svelte/getting-started">install it</a
+	>.
+</p>
+
+<ol>
+	{@render stepOne()}
+	{@render stepTwo()}
+	{@render stepThree()}
+</ol>
 
 <style>
 	:global(.demo .svlt-grid-shadow) {
@@ -153,15 +327,21 @@
 	h1,
 	p,
 	ol,
-	/*
+	li,
 	hr,
-	*/
 	.demo {
 		max-width: 760px;
 		margin-left: auto;
 		margin-right: auto;
 		color: var(--sg5-c-dark-text-1);
 		font-family: var(--sg5-default-font);
+	}
+
+	hr {
+		border: 0;
+		height: 1px;
+		margin-top: 30px;
+		background-color: var(--sg5-c-group-separator);
 	}
 
 	h1 {
