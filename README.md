@@ -23,7 +23,7 @@ SG5 uses [function props](https://svelte.dev/docs/svelte/$props).
 ## About
 
 - 100% Svelte 5 (or TypeScript) - no jQuery, no 3rd party dependencies
-- Compatible with Sapper (SSR Svelte)
+- Compatible with Sapper (SSR Svelte) (**not tested in SG5**)
 - Draggable widgets
 - Resizable widgets
 - Static widgets
