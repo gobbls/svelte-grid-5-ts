@@ -43,6 +43,8 @@ SG5 uses [function props](https://svelte.dev/docs/svelte/$props).
 npm i svelte-grid-5-ts --save-dev
 ```
 
+---
+
 ## Getting Started
 
 > - If you don't already have Svelte 5 installed,
@@ -61,7 +63,11 @@ npm i svelte-grid-5-ts --save-dev
 </script>
 ```
 
-and create a `div` wrapper for SG5.
+ and create a `div` wrapper for SG5.
+
+``` HTML
+<div class="sg5-wrapper"></div>
+```
 
 2. Specify the specs for the grid, then create an array with a single item.
 
@@ -100,7 +106,7 @@ and create a `div` wrapper for SG5.
 </script>
 ```
 
-We then bind the items and pass the specs to the component as props.
+ We then bind the items and pass the specs to the component as props.
 
 ``` HTML
 <div class="sg5-wrapper">
@@ -134,7 +140,7 @@ used in our passed `div` to display the ID of the item.
 </div>
 ```
 
-Then, create the function to handle the event.
+ Then, create the function to handle the event.
 
 ``` HTML
 <script lang="ts">
