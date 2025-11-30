@@ -18,7 +18,7 @@ due to the major version bump of Svelte:
 1. Exposed event hooks; where SG uses
 [eventDispatcher](https://svelte.dev/docs/svelte/svelte#createEventDispatcher),
 SG5 uses [function props](https://svelte.dev/docs/svelte/$props).
-2. Since SG5 uses TypeScript; types are publicly available in /types/.
+2. Since SG5 uses TypeScript; types are publicly available in `/types/`.
 
 ## About
 
