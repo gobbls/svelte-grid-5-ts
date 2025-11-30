@@ -68,11 +68,20 @@ body {
 	background: var(--sg5-c-bg-base);
 }
 
-p.blockquote {
+p.blockquote,
+ul.blockquote {
 	box-sizing: border-box;
 	border-left: 4px solid var(--sg5-c-indigo-3);
 	padding: 5px 5px 5px 8px;
 	background: var(--sg5-c-quoteblock);
+}
+
+ul.blockquote {
+	padding-left: 25px;
+}
+
+ul li {
+	margin: 10px;
 }
 
 .clickable {

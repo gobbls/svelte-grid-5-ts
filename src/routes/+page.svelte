@@ -5,16 +5,19 @@
 	import hljs from 'highlight.js/lib/core';
 	import xml from 'highlight.js/lib/languages/xml';
 	import javascript from 'highlight.js/lib/languages/javascript';
+	import css from 'highlight.js/lib/languages/css';
+	import GettingStartedExampleGrid from './GettingStartedExampleGrid.svelte';
 
 	hljs.registerLanguage('xml', xml);
 	hljs.registerLanguage('javascript', javascript);
+	hljs.registerLanguage('css', css);
 
 	const COL = 10;
 	const cols = [[200, COL]];
 
 	let items: Item[] = $state([
 		{
-			id: 'move',
+			id: 'move me around',
 			data: '',
 			[COL]: {
 				fixed: false,
@@ -87,140 +90,6 @@
 		hljs.highlightAll();
 	});
 </script>
-
-{#snippet stepOne()}
-	<li>
-		Start by importing the component and the <code>Item</code> type, then create
-		a <code>div</code> wrapper for SG5.
-	</li>
-	<pre>
-		<code class="language-html"
-			>&lt;!-- your-component.svelte --&gt;
-
-&lt;script lang="ts"&gt;
-  import &lbrace; Grid &rbrace; from 'svelte-grid-5-ts';
-  import &lbrace; Item &rbrace; from 'svelte-grid-5-ts/types';
-&lt;/script&gt;
-
-&lt;!-- Used to set the size of the grid. --&gt;
-&lt;div class="sg5-wrapper"&gt;&lt;/div&gt;</code
-		>
-	</pre>
-{/snippet}
-
-{#snippet stepTwo()}
-	<li>
-		Specify the specs for the grid, then create an array with a single item. We
-		then bind the items, and send the specs to the component as props.
-	</li>
-	<pre>
-		<code class="language-html"
-			>&lt;!-- your-component.svelte --&gt;
-
-&lt;script lang="ts"&gt;
-  import &lbrace; Grid &rbrace; from 'svelte-grid-5-ts';
-  import &lbrace; Item &rbrace; from 'svelte-grid-5-ts/types';
-
-  const COL = 10;              // The amount of columns for the grid.
-  const cols = [[200, COL]];   // Breakpoints and columns.
-
-  // Here is a quick summary for each property. Check out "Usage" for detailed information.
-
-  // The items to bind. These are dynamically altered during modification.
-  // Think of an "item" as a frame for your widget.
-  const items: Item[] = $state([
-    &lbrace;
-      id: 'move',                      // Has to be unique for each item (a UUID for example).
-      data: '',                        // The data you want to pass to your widget.
-      [COL]: &lbrace;                         // 'COL' is used to match the grid column size.
-      	fixed: false,                  // true = not movable, but resizable.
-      	resizable: true,               // true = resizable, can change dimensions.
-      	draggable: true,               // true = draggable, can be moved.
-      	customDragger: false,          // Use a custom dragger?
-      	customResizer: false,          // Use a custom resizer?
-      	min: &lbrace; w: 1, h: 1 &rbrace;,           // The minimum size of this item.
-      	max: &lbrace;&rbrace; as Size,               // The maximum size of this item.
-      	x: 0,                          // Position or distance from the containers left border.
-      	y: 0,                          // Position or distance from the containers top border.
-      	w: 2,                          // The width, in columns, of the item.
-      	h: 3                           // The height, in rows, of the item.
-      &rbrace;
-    &rbrace;
-  ]);
-&lt;/script&gt;
-
-&lt;div class="sg5-wrapper"&gt;
-  &lt;Grid
-    bind:items
-    &lbrace;cols&rbrace;
-    gap=&lbrace;[2, 2]&rbrace;       &lt;!-- The gap in pixels between items --&gt;
-    rowHeight=&lbrace;50&rbrace;     &lt;!-- The height of each row in pixels --&gt;
-    fillSpace=&lbrace;false&rbrace;  &lt;!-- Shuffle other items to tidy up the available space? --&gt;
-    fastStart          &lt;!-- Disable the animated movement when the component mounts --&gt;
-  &gt;&lt;/Grid&gt;
-&lt;/div&gt;</code
-		>
-	</pre>
-{/snippet}
-
-{#snippet stepThree()}
-	<li>
-		Provide a widget (a <code>div</code> here, for the sake of demo) as a
-		snippet for the item to render. The <code>children</code> snippet returns
-		multiple properties for us to use. Here, we use the <code>dataItem</code>
-		property to receive the ID of our item, to then be used in our passed
-		<code>div</code> to display the ID of the item.
-	</li>
-	<pre>
-		<code class="language-html"
-			>&lt;!-- your-component.svelte --&gt;
-
-&lt;script lang="ts"&gt;
-  import &lbrace; Grid &rbrace; from 'svelte-grid-5-ts';
-  import &lbrace; Item &rbrace; from 'svelte-grid-5-ts/types';
-
-  const COL = 10;
-  const cols = [[200, COL]];
-
-  const items: Item[] = $state([
-    &lbrace;
-      id: 'move',
-      data: '',
-      [COL]: &lbrace;
-      	fixed: false,
-      	resizable: true,
-      	draggable: true,
-      	customDragger: false,
-      	customResizer: false,
-      	min: &lbrace; w: 1, h: 1 &rbrace;,
-      	max: &lbrace;&rbrace; as Size,
-      	x: 0,
-      	y: 0,
-      	w: 2,
-      	h: 3
-      &rbrace;
-    &rbrace;
-  ]);
-&lt;/script&gt;
-
-&lt;div class="sg5-wrapper"&gt;
-  &lt;Grid
-    bind:items
-    &lbrace;cols&rbrace;
-    gap=&lbrace;[2, 2]&rbrace;
-    rowHeight=&lbrace;50&rbrace;
-    fillSpace=&lbrace;false&rbrace;
-    fastStart
-  &gt;
-    &lt;!-- destructure the property for ease of use --&gt;
-    &lbrace;#snippet children(&lbrace; dataItem &rbrace;)&rbrace;
-      &lt;div class="item"&gt;&lbrace;dataItem.id&rbrace;&lt;/div&gt;
-    &lbrace;/snippet&rbrace;
-  &lt;/Grid&gt;
-&lt;/div&gt;</code
-		>
-	</pre>
-{/snippet}
 
 <svelte:head>
 	<title>Home</title>
@@ -309,16 +178,174 @@
 	></a>
 </h1>
 
-<p class="blockquote">
-	If you don't already have Svelte 5 installed, <a
-		href="https://svelte.dev/docs/svelte/getting-started">install it</a
-	>.
-</p>
+<ul class="blockquote">
+	<li>
+		If you don't already have Svelte 5 installed, <a
+			href="https://svelte.dev/docs/svelte/getting-started">install it</a
+		>, and start a development server.
+	</li>
+	<li>
+		All off these steps are done in the same <code>.svelte</code> file.
+	</li>
+</ul>
 
 <ol>
-	{@render stepOne()}
-	{@render stepTwo()}
-	{@render stepThree()}
+	<li>
+		Start by importing the component and the <code>Item, Size</code> types, as
+		well as the <code>OnChange</code> type, the event function we will utilize in
+		this example -
+	</li>
+	<pre>
+		<code class="language-html tag-svelte-script"
+			>&lt;script lang="ts"&gt;
+  import Grid from 'svelte-grid-5-ts';
+  import type &lbrace; Item, Size &rbrace; from 'svelte-grid-5-ts/types/item';
+  import type &lbrace; OnChange &rbrace; from 'svelte-grid-5-ts/types/funcs';
+&lt;/script&gt;</code
+		>
+	</pre>
+
+	and create a<code>div</code> wrapper for SG5.
+	<pre>
+		<code class="language-html tag-svelte-template"
+			>&lt;div class="sg5-wrapper"&gt;&lt;/div&gt;</code
+		>
+	</pre>
+
+	<li>
+		Specify the specs for the grid, then create an array with a single item.
+	</li>
+	<pre>
+		<code class="language-html tag-svelte-script"
+			>&lt;script lang="ts"&gt;
+  // ...
+  const COL = 10;            // The amount of columns for the grid.
+  const cols = [[200, COL]]; // Breakpoints and columns.
+
+  /*
+   * Here is a quick summary for each property.
+   * Check out the "Usage" page for detailed information.
+   */
+
+  // The items to bind. These are dynamically altered during modification.
+  // Think of an "item" as a frame for your widget.
+  let items: Item[] = $state([
+    &lbrace;
+      id: 'move me around',   // Has to be unique for each item (a UUID for example).
+      data: '',               // The data you want to pass to your widget.
+      [COL]: &lbrace;                // 'COL' is used to match the grid column size.
+      	fixed: false,         // true = not movable, but resizable.
+      	resizable: true,      // true = resizable, can change dimensions.
+      	draggable: true,      // true = draggable, can be moved.
+      	customDragger: false, // Use a custom dragger?
+      	customResizer: false, // Use a custom resizer?
+      	min: &lbrace; w: 1, h: 1 &rbrace;,  // The minimum size of this item.
+      	max: &lbrace;&rbrace; as Size,      // The maximum size of this item.
+      	x: 0,                 // Position or distance from the containers left border.
+      	y: 0,                 // Position or distance from the containers top border.
+      	w: 2,                 // The width, in columns, of the item.
+      	h: 3                  // The height, in rows, of the item.
+      &rbrace;
+    &rbrace;
+  ]);
+&lt;/script&gt;</code
+		>
+	</pre>
+
+	We then bind the items and pass the specs to the component as props.
+	<pre>
+		<code class="language-html tag-svelte-template"
+			>&lt;div class="sg5-wrapper"&gt;
+  &lt;Grid
+    bind:items
+    &lbrace;cols&rbrace;
+    gap=&lbrace;[2, 2]&rbrace;      &lt;!-- The gap in pixels between items --&gt;
+    rowHeight=&lbrace;50&rbrace;    &lt;!-- The height of each row in pixels --&gt;
+    fillSpace=&lbrace;false&rbrace; &lt;!-- Shuffle other items to tidy up the available space? --&gt;
+    fastStart         &lt;!-- Disable the animated movement when the component mounts --&gt;
+  &gt;&lt;/Grid&gt;
+&lt;/div&gt;</code
+		>
+	</pre>
+
+	<li>
+		Add the <code>onChange</code> event prop and pass it a function referance.<br
+		/>
+		Provide a widget (a <code>div</code> here, for the sake of example) as a
+		snippet for the item to render.<br /> The <code>children</code> snippet
+		returns multiple properties for us to use. Here, we use the
+		<code>dataItem</code>
+		property to receive the ID of our item, to then be used in our passed
+		<code>div</code> to display the ID of the item.
+	</li>
+	<pre>
+		<code class="language-html tag-svelte-template"
+			>&lt;div class="sg5-wrapper"&gt;
+  &lt;Grid
+    ...
+    onChange=&lbrace;handleOnChange&rbrace;
+  &gt;
+    &lt;!-- destructure the property for ease of use --&gt;
+    &lbrace;#snippet children(&lbrace; dataItem &rbrace;)&rbrace;
+      &lt;div class="sg5-item"&gt;&lbrace;dataItem.id&rbrace;&lt;/div&gt;
+    &lbrace;/snippet&rbrace;
+  &lt;/Grid&gt;
+&lt;/div&gt;</code
+		>
+	</pre>
+
+	Then, create the function to handle the event.
+	<pre>
+		<code class="language-html tag-svelte-script"
+			>&lt;script lang="ts"&gt;
+  // ...
+  // Let's keep track of all the updates that happens.
+  let updates: number = $state(0);
+
+  // For ease of use, simply spread the object properties.
+  function handleOnChange(&lbrace; ...data &rbrace;: OnChange): void &lbrace;
+    updates++;
+    console.log(
+      `[UPDATE: $&lbrace;updates&rbrace;] Have a look at the data we can use:`,
+      data
+    );
+  &rbrace;
+&lt;/script&gt;</code
+		>
+	</pre>
+
+	<li>
+		Then, to finish off this example, add some styling to the wrapper and your
+		widget.
+	</li>
+	<pre>
+		<code class="language-html tag-svelte-style"
+			>&lt;style&gt;
+  .sg5-wrapper &lbrace;
+    max-width: 760px;
+    margin-top: 30px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    background-color: #161618;
+  &rbrace;
+
+  .sg5-item &lbrace;
+    width: 100%;
+    height: 100%;
+    color: #161618;
+    background-color: #a8b1ff;
+	overflow: hidden;
+  &rbrace;
+&lt;/style&gt;</code
+		>
+	</pre>
+
+	Now, with all the steps applied, your example should look like this.<br />
+	<i> Open your browser console and move the item around to see the </i><code
+		>OnChange</code
+	><i> function run. </i>
+
+	<GettingStartedExampleGrid />
 </ol>
 
 <style>
@@ -329,6 +356,7 @@
 	h1,
 	p,
 	ol,
+	ul,
 	li,
 	hr,
 	.demo {
@@ -386,14 +414,52 @@
 		font-weight: 400;
 	}
 
-	p a {
+	ol {
+		padding-left: 1em;
+	}
+
+	p a,
+	ul a {
 		color: #a8b1ff;
 	}
 
+	/*
+	 * compansate for whitespace blocks making
+	 * the <pre> block heigher than wanted.
+	 */
+	pre {
+		margin-top: -1em;
+		margin-bottom: -1em;
+	}
+
 	code {
+		position: relative;
 		background: var(--sg5-c-bg-text-code);
 		padding: 2px 4px;
 		border-radius: 5px;
+	}
+
+	code.language-html.tag-svelte-script::before,
+	code.language-html.tag-svelte-template::before,
+	code.language-html.tag-svelte-style::before {
+		position: absolute;
+		top: 2px;
+		right: 2px;
+		padding: 3px 5px;
+		border-radius: 3px;
+		background: rgba(0, 0, 0, 0.3);
+	}
+
+	code.language-html.tag-svelte-script::before {
+		content: 'Svelte5 script';
+	}
+
+	code.language-html.tag-svelte-template::before {
+		content: 'Svelte5 template';
+	}
+
+	code.language-html.tag-svelte-style::before {
+		content: 'Svelte5 style';
 	}
 
 	.demo {
