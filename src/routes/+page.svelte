@@ -413,7 +413,8 @@
 	}
 
 	ol {
-		padding-left: 1em;
+		padding-left: 1.2em;
+		box-sizing: border-box;
 	}
 
 	p a,
