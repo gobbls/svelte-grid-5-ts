@@ -55,10 +55,10 @@
 <style>
 	.sg5-wrapper {
 		max-width: 760px;
-		margin-top: 30px;
-		border: 1px solid white;
 		box-sizing: border-box;
+		border: 1px solid white;
 		background-color: #161618;
+		margin-top: 30px;
 	}
 
 	.sg5-item {
