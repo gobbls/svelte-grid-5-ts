@@ -184,6 +184,7 @@ widget.
 ```
 
 Now, with all the steps applied, your example should look like this.
-Open your browser console and move the item around to see theOnChangefunction run.
+_Open your browser console and move the item around to see the_
+`OnChangefunction` _run._
 
 ![A preview of the example code above.](/static/example-preview.png)
