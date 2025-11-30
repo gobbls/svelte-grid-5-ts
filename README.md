@@ -51,7 +51,7 @@ npm i svelte-grid-5-ts --save-dev
 > - All off these steps are done in the same `.svelte` file.
 
 1. Start by importing the component and the `Item, Size` types, as well as the
-OnChange type, the event function we will utilize in this example -
+`OnChange` type, the event function we will utilize in this example -
 
 ``` HTML
 <script lang="ts">
