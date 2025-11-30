@@ -207,6 +207,7 @@
 		grid-row: span 2 / span 2;
 		max-width: var(--sg5-page-max-width);
 		overflow-y: scroll;
+		scroll-behavior: smooth;
 	}
 
 	.page > main > article {
