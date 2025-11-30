@@ -95,9 +95,8 @@
 	<title>Home</title>
 </svelte:head>
 
-<h1>
+<h1 id="what-is-svelte-grid-5-ts">
 	What is svelte-grid-5-ts?<a
-		id="what-is-svelte-grid-5-ts"
 		aria-label="Permalink to 'What is svelte-grid-5-ts'"
 		class="header-anchor"
 		href="#what-is-svelte-grid-5-ts"
@@ -169,9 +168,8 @@
 
 <hr />
 
-<h1>
+<h1 id="getting-started">
 	Getting Started<a
-		id="getting-started"
 		aria-label="Permalink to 'What is svelte-grid-5-ts'"
 		class="header-anchor"
 		href="#getting-started"
@@ -285,7 +283,6 @@
     ...
     onChange=&lbrace;handleOnChange&rbrace;
   &gt;
-    &lt;!-- destructure the property for ease of use --&gt;
     &lbrace;#snippet children(&lbrace; dataItem &rbrace;)&rbrace;
       &lt;div class="sg5-item"&gt;&lbrace;dataItem.id&rbrace;&lt;/div&gt;
     &lbrace;/snippet&rbrace;
@@ -323,10 +320,10 @@
 			>&lt;style&gt;
   .sg5-wrapper &lbrace;
     max-width: 760px;
-    margin-top: 30px;
-    border: 1px solid white;
     box-sizing: border-box;
+    border: 1px solid white;
     background-color: #161618;
+    margin-top: 30px;
   &rbrace;
 
   .sg5-item &lbrace;
@@ -334,7 +331,7 @@
     height: 100%;
     color: #161618;
     background-color: #a8b1ff;
-	overflow: hidden;
+    overflow: hidden;
   &rbrace;
 &lt;/style&gt;</code
 		>
@@ -377,6 +374,7 @@
 	h1 {
 		position: relative;
 		font-size: 28px;
+		scroll-margin-top: 80px;
 	}
 
 	h1 a.header-anchor {
