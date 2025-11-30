@@ -203,7 +203,7 @@
 		>
 	</pre>
 
-	and create a<code>div</code> wrapper for SG5.
+	and create a <code>div</code> wrapper for SG5.
 	<pre>
 		<code class="language-html tag-svelte-template"
 			>&lt;div class="sg5-wrapper"&gt;&lt;/div&gt;</code
