@@ -1,5 +1,6 @@
 <script lang="ts">
 	import './style.css';
+	import 'highlight.js/styles/base16/ashes.css';
 	import type { Snippet } from 'svelte';
 	import type { Group } from './LeftSidebar.svelte';
 	import { slide } from 'svelte/transition';
@@ -23,6 +24,10 @@
 				{
 					title: 'What is svelte-grid-5-ts?',
 					anchor: '#what-is-svelte-grid-5-ts'
+				},
+				{
+					title: 'Getting Started',
+					anchor: '#getting-started'
 				}
 			]
 		},
