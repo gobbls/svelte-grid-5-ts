@@ -3,8 +3,10 @@
 	import type { Item, Size } from '../lib/types/item';
 	import { onMount } from 'svelte';
 	import hljs from 'highlight.js/lib/core';
-	import javascript from 'highlight.js/lib/languages/xml';
+	import xml from 'highlight.js/lib/languages/xml';
+	import javascript from 'highlight.js/lib/languages/javascript';
 
+	hljs.registerLanguage('xml', xml);
 	hljs.registerLanguage('javascript', javascript);
 
 	const COL = 10;
