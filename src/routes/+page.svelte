@@ -374,7 +374,7 @@
 	h1 {
 		position: relative;
 		font-size: 28px;
-		scroll-margin-top: 80px;
+		scroll-margin-top: 50px;
 	}
 
 	h1 a.header-anchor {
