@@ -181,3 +181,8 @@ widget.
   }
 </style>
 ```
+
+Now, with all the steps applied, your example should look like this.
+Open your browser console and move the item around to see theOnChangefunction run.
+
+![A preview of the example code above.](/static/example-preview.png)
