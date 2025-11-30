@@ -50,7 +50,7 @@ body.light {
 	--sg5-c-group-separator: 			#2e2e32;
 	--sg5-c-quoteblock:					rgba(100, 108, 255, 0.2);
 
-	--sg5-page-max-width: 				1540px;
+	--sg5-page-max-width: 				1080px;
 	--sg5-page-max-width-breapoint: 	800px;
 
 	--sg5-header-height: 				56px;
@@ -66,6 +66,7 @@ body {
 	height: 100vh;
 	width: 100%;
 	background: var(--sg5-c-bg-base);
+	overflow-x: hidden;
 }
 
 p.blockquote,

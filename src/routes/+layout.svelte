@@ -183,9 +183,6 @@
 		<article>
 			{@render children()}
 		</article>
-		<footer>
-			test
-		</footer>
 	</main>
 </div>
 
@@ -208,24 +205,14 @@
 		grid-row-start: 2;
 		grid-column: span 2 / span 2;
 		grid-row: span 2 / span 2;
-		max-width: var(--sg5-page-max-width);
 		overflow-y: scroll;
 		scroll-behavior: smooth;
-		display: flex;
-		flex-direction: column;
-		min-height: calc(100vh - var(--sg5-header-height))px;
 	}
 
 	.page > main > article {
 		flex: 1;
 		padding: 16px 24px;
-	}
-
-	.page > main > footer {
-		border-top: 1px solid black;
-		color: var(--sg5-c-text-navigation);
-		font-family: var(--sg5-default-font);
-		padding: 30px;
+		max-width: var(--sg5-page-max-width);
 	}
 
 	.page > .left-sidebar {
