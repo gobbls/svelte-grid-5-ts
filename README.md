@@ -57,19 +57,19 @@ npm i svelte-grid-5-ts --save-dev
 1.  Start by importing the component and the `Item, Size` types, as well as the
     `OnChange` type, the event function we will utilize in this example -
 
-        ```HTML
-        <script lang="ts">
-          import Grid from 'svelte-grid-5-ts';
-          import type { Item, Size } from 'svelte-grid-5-ts/types/item';
-          import type { OnChange } from 'svelte-grid-5-ts/types/funcs';
-        </script>
-        ```
+    ```HTML
+    <script lang="ts">
+      import Grid from 'svelte-grid-5-ts';
+      import type { Item, Size } from 'svelte-grid-5-ts/types/item';
+      import type { OnChange } from 'svelte-grid-5-ts/types/funcs';
+    </script>
+    ```
 
     and create a `div` wrapper for SG5.
 
-        ```HTML
-        <div class="sg5-wrapper"></div>
-        ```
+    ```HTML
+    <div class="sg5-wrapper"></div>
+    ```
 
 2.  Specify the specs for the grid, then create an array with a single item.
 
@@ -129,60 +129,60 @@ npm i svelte-grid-5-ts --save-dev
     Here, we use the `dataItem` property to receive the ID of our item, to then be
     used in our passed `div` to display the ID of the item.
 
-        ```HTML
-        <div class="sg5-wrapper">
-          <Grid
-            ...
-            onChange={handleOnChange}
-          >
-            {#snippet children({ dataItem })}
-              <div class="sg5-item">{dataItem.id}</div>
-            {/snippet}
-          </Grid>
-        </div>
-        ```
+    ```HTML
+    <div class="sg5-wrapper">
+      <Grid
+        ...
+        onChange={handleOnChange}
+      >
+        {#snippet children({ dataItem })}
+          <div class="sg5-item">{dataItem.id}</div>
+        {/snippet}
+      </Grid>
+    </div>
+    ```
 
     Then, create the function to handle the event.
 
-        ```HTML
-        <script lang="ts">
-          // ...
-          // Let's keep track of all the updates that happens.
-          let updates: number = $state(0);
+    ```HTML
+    <script lang="ts">
+      // ...
+      // Let's keep track of all the updates that happens.
+      let updates: number = $state(0);
 
-          // For ease of use, simply spread the object properties.
-          function handleOnChange({ ...data }: OnChange): void {
-            updates++;
-            console.log(
-              `[UPDATE: ${updates}] Have a look at the data we can use:`,
-              data
-            );
-          }
-        </script>
-        ```
+      // For ease of use, simply spread the object properties.
+      function handleOnChange({ ...data }: OnChange): void {
+        updates++;
+        console.log(
+          `[UPDATE: ${updates}] Have a look at the data we can use:`,
+          data
+        );
+      }
+    </script>
+    ```
 
 4.  Then, to finish off this example, add some styling to the wrapper and your
     widget.
 
-        ```HTML
-        <style>
-          .sg5-wrapper {
-            max-width: 760px;
-            box-sizing: border-box;
-            border: 1px solid white;
-            background-color: #161618;
-            margin-top: 30px;
-          }
+    ```HTML
+    <style>
+      .sg5-wrapper {
+        max-width: 760px;
+        box-sizing: border-box;
+        border: 1px solid white;
+        background-color: #161618;
+        margin-top: 30px;
+      }
 
-          .sg5-item {
-            width: 100%;
-            height: 100%;
-            color: #161618;
-            background-color: #a8b1ff;
-            overflow: hidden;
-          }
-        </style>
-        ```
+      .sg5-item {
+        width: 100%;
+        height: 100%;
+        color: #161618;
+        background-color: #a8b1ff;
+        overflow: hidden;
+      }
+    </style>
+    ```
 
 Now, with all the steps applied, your example should look like this.
 _Open your browser console and move the item around to see the_
