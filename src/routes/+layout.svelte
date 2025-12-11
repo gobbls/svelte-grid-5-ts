@@ -1,12 +1,11 @@
 <script lang="ts">
-	import './style.css';
 	import 'highlight.js/styles/base16/ashes.css';
+	import './style.css';
 	import type { Snippet } from 'svelte';
-	import type { Group } from './LeftSidebar.svelte';
-	import { slide } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
-	import LeftSidebar from './LeftSidebar.svelte';
-	import Header from './Header.svelte';
+	import { slide } from 'svelte/transition';
+	import LeftSidebar from '../components/LeftSidebar.svelte';
+	import Header from '../components/Header.svelte';
 
 	let { children }: { children: Snippet } = $props();
 
@@ -14,109 +13,6 @@
 
 	let showLeftModal = $state(false);
 	let innerWidth: number = $state(0);
-
-	let navGroups: Group[] = $state([
-		{
-			title: 'Home',
-			url: '/',
-			open: false,
-			items: [
-				{
-					title: 'What is svelte-grid-5-ts?',
-					anchor: '#what-is-svelte-grid-5-ts'
-				},
-				{
-					title: 'Getting Started',
-					anchor: '#getting-started'
-				}
-			]
-		},
-		{
-			title: 'Examples',
-			url: '/examples',
-			open: false,
-			items: [
-				{
-					title: 'Basic',
-					anchor: '#basic'
-				},
-				{
-					title: 'Gap',
-					anchor: '#gap'
-				},
-				{
-					title: 'Responsive',
-					anchor: '#responsive'
-				},
-				{
-					title: 'Add/Remove',
-					anchor: '#add-remove'
-				},
-				{
-					title: 'Min/Max size',
-					anchor: '#min-max-size'
-				},
-				{
-					title: 'Fixed',
-					anchor: '#fixed'
-				},
-				{
-					title: 'Serialize/Restore',
-					anchor: '#serialize-restore'
-				},
-				{
-					title: 'Events',
-					anchor: '#events'
-				},
-				{
-					title: 'Responsive - Serialize/Restore',
-					anchor: '#responsive-serialize-restore'
-				},
-				{
-					title: 'Custom dragger',
-					anchor: '#custom-dragger'
-				},
-				{
-					title: 'Custom resizer',
-					anchor: '#custom-resizer'
-				},
-				{
-					title: 'Fast start',
-					anchor: '#fast-start'
-				},
-				{
-					title: 'Fill space',
-					anchor: '#fill-space'
-				},
-				{
-					title: 'Autoscroll',
-					anchor: '#autoscroll'
-				}
-			]
-		},
-		{
-			title: 'Usage',
-			url: '/usage',
-			open: false,
-			items: [
-				{
-					title: 'What is svelte-grid-5-ts?',
-					anchor: '#what-is-svelte-grid-5-ts'
-				}
-			]
-		},
-		{
-			title: 'Features',
-			url: '/features',
-			open: false,
-			items: [
-				{
-					title: 'What is svelte-grid-5-ts?',
-					anchor: '#what-is-svelte-grid-5-ts'
-				}
-			]
-		}
-	]);
 
 	const blurPageStyle = $derived(
 		`filter: ${showLeftModal && innerWidth < MOBILE_BREAKPOINT ? 'blur(4px)' : 'none'}`
@@ -162,7 +58,7 @@
 			onclick={ignoreAction}
 			onkeydown={dismissModalWithKey}
 		>
-			<LeftSidebar modal title="svelte-grid-5-ts" bind:groups={navGroups} />
+			<LeftSidebar modal title="svelte-grid-5-ts" />
 		</div>
 	</div>
 {/if}
@@ -170,7 +66,7 @@
 <div class="page" style={blurPageStyle}>
 	<div class="left-sidebar">
 		{#if innerWidth > MOBILE_BREAKPOINT}
-			<LeftSidebar title="svelte-grid-5-ts" bind:groups={navGroups} />
+			<LeftSidebar title="svelte-grid-5-ts" />
 		{/if}
 	</div>
 	<div class="header">
