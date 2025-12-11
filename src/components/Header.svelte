@@ -1,8 +1,8 @@
 <script lang="ts">
-	import GithubIcon from './GithubIcon.svelte';
-	import MenuIcon from './MenuIcon.svelte';
+	import GithubIcon from './icons/GithubIcon.svelte';
+	import MenuIcon from './icons/MenuIcon.svelte';
+	import NpmIcon from './icons/NpmIcon.svelte';
 	import { PUBLIC_GITHUB_URL, PUBLIC_NPM_URL } from '$env/static/public';
-	import NpmIcon from './NpmIcon.svelte';
 
 	interface Props {
 		mobile: boolean;

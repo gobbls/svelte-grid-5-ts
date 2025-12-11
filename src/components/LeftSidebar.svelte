@@ -1,27 +1,16 @@
-<script module lang="ts">
-	export interface Group {
-		title: string;
-		url: string;
-		open: boolean;
-		items: {
-			title: string;
-			anchor: string;
-		}[];
-	}
-</script>
-
 <script lang="ts">
+	import type { Group } from '../types/routes';
 	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
-	import ChevronIcon from './ChevronIcon.svelte';
+	import { navGroups as groups } from '../states/examples.svelte';
+	import ChevronIcon from './icons/ChevronIcon.svelte';
 
 	interface Props {
 		title: string;
-		groups: Group[];
 		modal?: boolean;
 	}
 
-	let { title, groups = $bindable(), modal }: Props = $props();
+	let { title, modal }: Props = $props();
 
 	let thisModal = $state<HTMLDivElement>();
 
