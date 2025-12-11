@@ -57,7 +57,7 @@ npm i svelte-grid-5-ts --save-dev
 1.  Start by importing the component and the `Item, Size` types, as well as the
     `OnChange` type, the event function we will utilize in this example -
 
-        ``` HTML
+        ```HTML
         <script lang="ts">
           import Grid from 'svelte-grid-5-ts';
           import type { Item, Size } from 'svelte-grid-5-ts/types/item';
@@ -65,9 +65,9 @@ npm i svelte-grid-5-ts --save-dev
         </script>
         ```
 
-        and create a `div` wrapper for SG5.
+    and create a `div` wrapper for SG5.
 
-        ``` HTML
+        ```HTML
         <div class="sg5-wrapper"></div>
         ```
 
@@ -129,7 +129,7 @@ npm i svelte-grid-5-ts --save-dev
     Here, we use the `dataItem` property to receive the ID of our item, to then be
     used in our passed `div` to display the ID of the item.
 
-        ``` HTML
+        ```HTML
         <div class="sg5-wrapper">
           <Grid
             ...
@@ -142,9 +142,9 @@ npm i svelte-grid-5-ts --save-dev
         </div>
         ```
 
-        Then, create the function to handle the event.
+    Then, create the function to handle the event.
 
-        ``` HTML
+        ```HTML
         <script lang="ts">
           // ...
           // Let's keep track of all the updates that happens.
@@ -164,7 +164,7 @@ npm i svelte-grid-5-ts --save-dev
 4.  Then, to finish off this example, add some styling to the wrapper and your
     widget.
 
-        ``` HTML
+        ```HTML
         <style>
           .sg5-wrapper {
             max-width: 760px;
