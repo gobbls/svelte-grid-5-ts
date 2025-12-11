@@ -1,5 +1,5 @@
 <script lang="ts">
-	let { direction = 'left' }: { direction: 'left' | 'down' } = $props();
+let { direction = 'left' }: { direction: 'left' | 'down' } = $props();
 </script>
 
 <div class="chevron-icon-wrapper {direction}">
@@ -12,18 +12,18 @@
 </div>
 
 <style>
-	.chevron-icon-wrapper {
-		height: 15px;
-		aspect-ratio: 1 / 1;
-		padding: 3px;
-		transition: rotate var(--sg5-expanding-transition-time) ease-in-out;
-	}
+.chevron-icon-wrapper {
+	height: 15px;
+	aspect-ratio: 1 / 1;
+	padding: 3px;
+	transition: rotate var(--sg5-expanding-transition-time) ease-in-out;
+}
 
-	.chevron-icon-wrapper.left {
-		rotate: 90deg;
-	}
+.chevron-icon-wrapper.left {
+	rotate: 90deg;
+}
 
-	.chevron-icon-wrapper.down {
-		rotate: 0deg;
-	}
+.chevron-icon-wrapper.down {
+	rotate: 0deg;
+}
 </style>

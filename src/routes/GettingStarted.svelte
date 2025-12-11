@@ -1,19 +1,15 @@
 <script lang="ts">
-	import GettingStartedExampleGrid from './GettingStartedExampleGrid.svelte';
+import GettingStartedExampleGrid from './GettingStartedExampleGrid.svelte';
 </script>
 
 <h1 id="getting-started">
-	Getting Started<a
-		aria-label="Permalink to 'What is svelte-grid-5-ts'"
-		class="header-anchor"
-		href="#getting-started"
+	Getting Started<a aria-label="Permalink to 'What is svelte-grid-5-ts'" class="header-anchor" href="#getting-started"
 	></a>
 </h1>
 
 <ul class="blockquote">
 	<li>
-		If you don't already have Svelte 5 installed, <a
-			href="https://svelte.dev/docs/svelte/getting-started">install it</a
+		If you don't already have Svelte 5 installed, <a href="https://svelte.dev/docs/svelte/getting-started">install it</a
 		>, and start a development server.
 	</li>
 	<li>
@@ -23,9 +19,8 @@
 
 <ol>
 	<li>
-		Start by importing the component and the <code>Item, Size</code> types, as
-		well as the <code>OnChange</code> type, the event function we will utilize in
-		this example -
+		Start by importing the component and the <code>Item, Size</code> types, as well as the <code>OnChange</code> type, the
+		event function we will utilize in this example -
 	</li>
 	<pre>
 		<code class="language-html tag-svelte-script"
@@ -39,14 +34,10 @@
 
 	and create a<code>div</code> wrapper for SG5.
 	<pre>
-		<code class="language-html tag-svelte-template"
-			>&lt;div class="sg5-wrapper"&gt;&lt;/div&gt;</code
-		>
+		<code class="language-html tag-svelte-template">&lt;div class="sg5-wrapper"&gt;&lt;/div&gt;</code>
 	</pre>
 
-	<li>
-		Specify the specs for the grid, then create an array with a single item.
-	</li>
+	<li>Specify the specs for the grid, then create an array with a single item.</li>
 	<pre>
 		<code class="language-html tag-svelte-script"
 			>&lt;script lang="ts"&gt;
@@ -101,11 +92,10 @@
 	</pre>
 
 	<li>
-		Add the <code>onChange</code> event prop and pass it a function referance.<br
-		/>
-		Provide a widget (a <code>div</code> here, for the sake of example) as a
-		snippet for the item to render.<br /> The <code>children</code> snippet
-		returns multiple properties for us to use. Here, we use the
+		Add the <code>onChange</code> event prop and pass it a function referance.<br />
+		Provide a widget (a <code>div</code> here, for the sake of example) as a snippet for the item to render.<br /> The
+		<code>children</code>
+		snippet returns multiple properties for us to use. Here, we use the
 		<code>dataItem</code>
 		property to receive the ID of our item, to then be used in our passed
 		<code>div</code> to display the ID of the item.
@@ -145,10 +135,7 @@
 		>
 	</pre>
 
-	<li>
-		Then, to finish off this example, add some styling to the wrapper and your
-		widget.
-	</li>
+	<li>Then, to finish off this example, add some styling to the wrapper and your widget.</li>
 	<pre>
 		<code class="language-html tag-svelte-style"
 			>&lt;style&gt;
@@ -172,9 +159,7 @@
 	</pre>
 
 	Now, with all the steps applied, your example should look like this.<br />
-	<i> Open your browser console and move the item around to see the </i><code
-		>OnChange</code
-	><i> function run. </i>
+	<i> Open your browser console and move the item around to see the </i><code>OnChange</code><i> function run. </i>
 
 	<GettingStartedExampleGrid />
 </ol>

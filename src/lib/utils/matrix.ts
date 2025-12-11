@@ -1,13 +1,8 @@
 import type { Item, Value } from '../types/item';
 
-export const makeMatrix = (rows: number, cols: number): Value[][] =>
-	Array.from(Array(rows), () => new Array(cols)); // make 2d array
+export const makeMatrix = (rows: number, cols: number): Value[][] => Array.from(Array(rows), () => new Array(cols)); // make 2d array
 
-export function makeMatrixFromItems(
-	items: Item[],
-	_row: number,
-	_col: number
-): Value[][] {
+export function makeMatrixFromItems(items: Item[], _row: number, _col: number): Value[][] {
 	let matrix: Value[][] = makeMatrix(_row, _col);
 
 	for (var i = 0; i < items.length; i++) {
@@ -40,21 +35,14 @@ export function findCloseBlocks(matrix: Value[][], curObject: Value): string[] {
 		let tempA = tempR[i].slice(x, x + w);
 		result = [
 			...result,
-			...(tempA
-				.map((val) => val.id && val.id !== curObject.id && val.id)
-				.filter(Boolean) as string[])
+			...(tempA.map((val) => val.id && val.id !== curObject.id && val.id).filter(Boolean) as string[])
 		];
 	}
 
 	return [...new Set(result)];
 }
 
-export function makeMatrixFromItemsIgnore(
-	items: Item[],
-	ignoreList: string[],
-	_row: number,
-	_col: number
-): Value[][] {
+export function makeMatrixFromItemsIgnore(items: Item[], ignoreList: string[], _row: number, _col: number): Value[][] {
 	let matrix = makeMatrix(_row, _col);
 
 	for (var i = 0; i < items.length; i++) {
