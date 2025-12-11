@@ -131,3 +131,142 @@ ul li {
 		stroke: var(--sg5-c-text-navigation);
 	}
 }
+
+/*************************
+ ******** ARTICLE ********
+ *************************/
+
+article h1,
+article p,
+article ol,
+article ul,
+article li,
+article hr,
+article .demo {
+	max-width: 760px;
+	margin-left: auto;
+	margin-right: auto;
+	color: var(--sg5-c-dark-text-1);
+	font-family: var(--sg5-default-font);
+}
+
+article hr {
+	border: 0;
+	height: 1px;
+	margin-top: 30px;
+	background-color: var(--sg5-c-group-separator);
+}
+
+article h1 {
+	position: relative;
+	font-size: 28px;
+	scroll-margin-top: 50px;
+}
+
+article h1 a.header-anchor {
+	position: absolute;
+	left: 0;
+	opacity: 0;
+	margin-left: -0.87em;
+	color: #a8b1ff;
+	font-weight: 500;
+	text-decoration: none;
+	user-select: none;
+	transition:
+		color 250ms,
+		opacity 250ms;
+	&:hover {
+		color: #5c73e7;
+	}
+	&:focus {
+		opacity: 1;
+	}
+}
+
+article h1:hover a.header-anchor {
+	opacity: 1;
+}
+
+article h1 a.header-anchor::before {
+	content: '#';
+}
+
+article p {
+	line-height: 28px;
+	font-synthesis: style;
+	text-rendering: optimizeLegibility;
+	font-weight: 400;
+}
+
+article ol {
+	padding-left: 1.2em;
+	box-sizing: border-box;
+}
+
+article p a,
+article ul a {
+	color: #a8b1ff;
+}
+
+/*
+ * compansate for whitespace blocks making
+ * the <pre> block heigher than wanted.
+ */
+article pre {
+	margin-top: -1em;
+	margin-bottom: -1em;
+}
+
+article code {
+	position: relative;
+	background: var(--sg5-c-bg-text-code) !important;
+	padding: 2px 4px;
+	border-radius: 5px;
+}
+
+article code.language-html.tag-svelte-script::before,
+article code.language-html.tag-svelte-template::before,
+article code.language-html.tag-svelte-style::before {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	padding: 3px 5px;
+	border-radius: 3px;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+article code.language-html.tag-svelte-script::before {
+	content: 'Svelte5 script';
+}
+
+article code.language-html.tag-svelte-template::before {
+	content: 'Svelte5 template';
+}
+
+article code.language-html.tag-svelte-style::before {
+	content: 'Svelte5 style';
+}
+
+article .demo {
+	padding: 5px;
+	margin-top: 20px;
+	border-radius: 10px;
+	background: var(--sg5-c-bg-text-code);
+}
+
+article .demo .item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	color: var(--sg5-c-bg-text-code);
+	width: 100%;
+	height: 100%;
+	padding: 2px;
+	border-radius: 5px;
+	background: #a8b1ff;
+	user-select: none;
+	word-break: break-all;
+	overflow: hidden;
+	font-size: clamp(0.4em, 1vw + 0.4em, 1em);
+}
