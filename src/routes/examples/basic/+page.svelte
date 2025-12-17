@@ -61,7 +61,7 @@ let items: Item[] = $state([
 </script>
 
 <svelte:head>
-	<title>Examples</title>
+	<title>Examples - basic</title>
 </svelte:head>
 
 <Grid bind:items={items} cols={cols} gap={[5, 5]} rowHeight={50} fillSpace={false}>
