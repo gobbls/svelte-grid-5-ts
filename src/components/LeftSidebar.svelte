@@ -2,7 +2,7 @@
 import type { Group } from '../types/routes';
 import { slide } from 'svelte/transition';
 import { onMount } from 'svelte';
-import { navGroups as groups } from '../states/examples.svelte';
+import { navGroups as groups } from '../stores/examples.svelte';
 import ChevronIcon from './icons/ChevronIcon.svelte';
 
 interface Props {

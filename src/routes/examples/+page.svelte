@@ -1,5 +1,5 @@
 <script lang="ts">
-import { navGroups as examples } from '../../states/examples.svelte';
+import { navGroups as examples } from '../../stores/examples.svelte';
 </script>
 
 <div class="wrapper">
