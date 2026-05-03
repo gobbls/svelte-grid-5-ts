@@ -18,13 +18,9 @@ const blurPageStyle = $derived(`filter: ${showLeftModal && innerWidth < MOBILE_B
 
 const showModal = $derived(showLeftModal && innerWidth <= MOBILE_BREAKPOINT);
 
-function ignoreAction(ev: MouseEvent) {
-	ev.stopPropagation();
-}
+const ignoreAction = (ev: MouseEvent) => ev.stopPropagation();
 
-function toggleModalOn() {
-	showLeftModal = true;
-}
+const toggleModalOn = () => (showLeftModal = true);
 
 function dismissModal(ev: MouseEvent) {
 	ev.stopPropagation();
@@ -45,8 +41,8 @@ function dismissModalWithKey(ev: KeyboardEvent) {
 	<div
 		role="dialog"
 		class="modal"
-		aria-modal={showModal ? 'true' : 'false'}
-		aria-hidden={showModal ? 'false' : 'true'}
+		aria-modal={showModal}
+		aria-hidden={!showModal}
 		onclick={dismissModal}
 		transition:slide={{ duration: 200, axis: 'x', easing: cubicInOut }}
 	>
@@ -89,7 +85,11 @@ function dismissModalWithKey(ev: KeyboardEvent) {
 	grid-column: span 2 / span 2;
 	grid-row: span 2 / span 2;
 	overflow-y: scroll;
+	/*
+	 * breaks the demo autoscroll
+	 *
 	scroll-behavior: smooth;
+	*/
 }
 
 .page > main > article {
