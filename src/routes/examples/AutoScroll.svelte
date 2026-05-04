@@ -2,14 +2,7 @@
 import Grid from '../../lib/index.svelte';
 import type { Item, Size } from '../../lib/types/item';
 import { onMount } from 'svelte';
-import javascript from 'highlight.js/lib/languages/javascript';
-import hljs from 'highlight.js/lib/core';
-import css from 'highlight.js/lib/languages/css';
-import xml from 'highlight.js/lib/languages/xml';
-
-hljs.registerLanguage('javascript', javascript);
-hljs.registerLanguage('css', css);
-hljs.registerLanguage('xml', xml);
+import { HighlightSvelte } from 'svelte-highlight';
 
 const COL = 10;
 const cols = [[1200, COL]];
@@ -60,12 +53,21 @@ let sensor: number = $state(20);
 onMount(() => {
 	documentContainer = document.getElementsByTagName('main')[0] as HTMLDivElement;
 	scroller = container;
-	hljs.highlightAll();
 });
 
 $effect(() => {
 	scroller = useDocument ? documentContainer : container;
 });
+
+const example: string =
+	`<!-- You can use a custom container as a scroll target -->
+<div bind:this={container}>
+  <Grid {...} scroller={container} />
+</div>
+
+<script>
+let container;
+</scr` + `ipt>`;
 </script>
 
 <h1 id="autoscroll">Autoscroll</h1>
@@ -82,18 +84,7 @@ $effect(() => {
 	Use document
 </label>
 
-<pre>
-	<code class="language-html tag-svelte-script"
-		>&lt;!-- You can use a custom container as a scroll target --&gt;
-&lt;div bind:this=&lbrace;container&rbrace;&gt;
-  &lt;Grid &lbrace;...&rbrace; scroller=&lbrace;container&rbrace; /&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-let container;
-&lt;/script&gt;</code
-	>
-</pre>
+<HighlightSvelte code={example} />
 
 <label>
 	Sensor value

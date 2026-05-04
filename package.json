@@ -65,6 +65,6 @@
 		"responsive"
 	],
 	"dependencies": {
-		"highlight.js": "^11.11.1"
+		"svelte-highlight": "^7.9.0"
 	}
 }

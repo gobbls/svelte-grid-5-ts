@@ -3,8 +3,8 @@ import Grid from '../lib/index.svelte';
 import type { Item, Size } from '../lib/types/item';
 import type { OnChange } from '../lib/types/funcs';
 
-const COL = 10; // The amount of columns for the grid.
-const cols = [[200, COL]]; // Breakpoints and columns.
+const COL = 10;
+const cols = [[200, COL]];
 
 let items: Item[] = $state([
 	{
@@ -27,6 +27,7 @@ let items: Item[] = $state([
 ]);
 
 let updates: number = $state(0);
+
 function handleOnChange({ ...data }: OnChange): void {
 	updates++;
 	console.log(`[UPDATE: ${updates}] Have a look at the data we can use:`, data);
@@ -34,15 +35,7 @@ function handleOnChange({ ...data }: OnChange): void {
 </script>
 
 <div class="sg5-wrapper">
-	<Grid
-		bind:items={items}
-		cols={cols}
-		gap={[2, 2]}
-		rowHeight={50}
-		fillSpace={false}
-		fastStart
-		onChange={handleOnChange}
-	>
+	<Grid bind:items={items} cols={cols} gap={[2, 2]} rowHeight={50} fastStart onChange={handleOnChange}>
 		{#snippet children({ dataItem })}
 			<div class="sg5-item">{dataItem.id}</div>
 		{/snippet}

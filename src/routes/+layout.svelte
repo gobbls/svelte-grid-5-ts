@@ -1,5 +1,5 @@
 <script lang="ts">
-import 'highlight.js/styles/base16/ashes.css';
+import ashes from 'svelte-highlight/styles/ashes';
 import './style.css';
 import type { Snippet } from 'svelte';
 import { cubicInOut } from 'svelte/easing';
@@ -34,6 +34,11 @@ function dismissModalWithKey(ev: KeyboardEvent) {
 	}
 }
 </script>
+
+<svelte:head>
+	<title>Home</title>
+	{@html ashes}
+</svelte:head>
 
 <svelte:window bind:innerWidth={innerWidth} />
 
@@ -85,11 +90,6 @@ function dismissModalWithKey(ev: KeyboardEvent) {
 	grid-column: span 2 / span 2;
 	grid-row: span 2 / span 2;
 	overflow-y: scroll;
-	/*
-	 * breaks the demo autoscroll
-	 *
-	scroll-behavior: smooth;
-	*/
 }
 
 .page > main > article {

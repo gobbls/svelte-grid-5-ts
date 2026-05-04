@@ -78,8 +78,8 @@ let items: Item[] = $state([
 </script>
 
 <div class="demo">
-	<Grid bind:items={items} cols={cols} gap={[2, 2]} rowHeight={50} fillSpace={false} fastStart>
-		{#snippet children({ dataItem })}
+	<Grid bind:items={items} cols={cols} gap={[2, 2]} rowHeight={50} fastStart>
+		{#snippet children({ dataItem }: { dataItem: Item })}
 			<div class="item">{dataItem.id}</div>
 		{/snippet}
 	</Grid>
