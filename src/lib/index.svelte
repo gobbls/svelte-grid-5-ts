@@ -51,17 +51,10 @@ let yPerPx: number = rowHeight;
 let containerWidth: number;
 let containerHeight: number = $derived(getContainerHeight(items, yPerPx, getComputedCols));
 
-function _onResize(): void {
-	Throttle.Throttler(({ ...args }) => {
-		items = specifyUndefinedColumns(items, getComputedCols, cols);
-		onResize?.({ ...args });
-	}, throttleResize)({
-		cols: getComputedCols,
-		width: containerWidth,
-		xPerPx,
-		yPerPx
-	});
-}
+const _onResize = throttle(() => {
+	items = specifyUndefinedColumns(items, getComputedCols, cols);
+	onResize?.({ cols: getComputedCols, width: containerWidth, xPerPx, yPerPx });
+}, throttleResize);
 
 function updateMatrix({ id, shadow, onUpdate }: { id: string; shadow: Size & Position; onUpdate?: () => void }): void {
 	let activeItem = getItemById(id, items);
