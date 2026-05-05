@@ -3,20 +3,19 @@ import { HighlightSvelte } from 'svelte-highlight';
 import GettingStartedExampleGrid from './GettingStartedExampleGrid.svelte';
 import Demo from './Demo.svelte';
 
-const imports: string =
+const codeImports: string =
 	`<script lang="ts">
   import Grid from 'svelte-grid-5-ts';
   import type { Item, Size } from 'svelte-grid-5-ts/types/item';
   import type { OnChange } from 'svelte-grid-5-ts/types/funcs';
-</scr` + `ipt>';`;
+</scr` + 'ipt>';
 
-const divWrapper: string = `<div class="sg5-wrapper"></div>`;
+const codeDivWrapper: string = '<div class="sg5-wrapper"></div>';
 
-const spec: string =
+const codeSpec: string =
 	`<script lang="ts">
-  // ...
-  const COL = 10;            // The amount of columns for the grid.
-  const cols = [[200, COL]]; // Breakpoints and columns.
+  const COL = 10;             // The amount of columns for the grid.
+  const cols = [[1200, COL]]; // Breakpoints and columns.
 
   /*
    * Here is a quick summary for each property.
@@ -24,7 +23,7 @@ const spec: string =
    */
 
   // The items to bind. These are dynamically altered during modification.
-  // Think of an "item" as a frame for your widget.
+  // Think of an "item" as a "frame" for your widget.
   let items: Item[] = $state([
     {
       id: 'move me around',   // Has to be unique for each item (a UUID for example).
@@ -44,9 +43,9 @@ const spec: string =
       }
     }
   ]);
-</scr` + `ipt>`;
+</scr` + 'ipt>';
 
-const bindItems: string = `<div class="sg5-wrapper">
+const codeBindItems: string = `<div class="sg5-wrapper">
   <Grid
     bind:items
     {cols}
@@ -57,7 +56,7 @@ const bindItems: string = `<div class="sg5-wrapper">
   ></Grid>
 </div>`;
 
-const eventProp: string = `<div class="sg5-wrapper">
+const codeEventProp: string = `<div class="sg5-wrapper">
   <Grid onChange={handleOnChange}>
     {#snippet children({ dataItem }: { dataItem: Item })}
       <div class="sg5-item">{dataItem.id}</div>
@@ -65,7 +64,7 @@ const eventProp: string = `<div class="sg5-wrapper">
   </Grid>
 </div>`;
 
-const eventHandler: string =
+const codeEventHandler: string =
 	`<script lang="ts">
   let updates: number = $state(0);
 
@@ -73,9 +72,9 @@ const eventHandler: string =
     updates++;
     console.log(\`[UPDATE: \${updates}] Have a look at the data we can use:\`, data);
   }
-</scr` + `ipt>`;
+</scr` + 'ipt>';
 
-const style: string =
+const codeStyle: string =
 	`<style>
   .sg5-wrapper {
     max-width: 760px;
@@ -92,8 +91,12 @@ const style: string =
     background-color: #a8b1ff;
     overflow: hidden;
   }
-</sty` + `le>`;
+</sty` + 'le>';
 </script>
+
+<svelte:head>
+	<title>SG5 | Home</title>
+</svelte:head>
 
 <h1 id="what-is-svelte-grid-5-ts">
 	What is svelte-grid-5-ts?<a
@@ -106,25 +109,23 @@ const style: string =
 <p>
 	<strong>svelte-grid-5-ts</strong> (<strong>SG5</strong>), is a
 	<a href="https://en.wikipedia.org/wiki/Fork_(software_development)" target="_blank">fork</a>
-	of <a href="https://svelte-grid.vercel.app/" target="_blank">svelte-grid</a>
-	(<strong>SG</strong>), converted from Svelte 3 and JavaScript; to
-	<a href="https://svelte.dev/blog/svelte-5-is-alive" target="_blank">Svelte 5</a>
-	and <a href="https://www.typescriptlang.org/">TypeScript</a>.
+	of <a href="https://svelte-grid.vercel.app/" target="_blank">svelte-grid</a> (<strong>SG</strong>), converted from
+	Svelte 3 and JavaScript; to <a href="https://svelte.dev/blog/svelte-5-is-alive" target="_blank">Svelte 5</a> and
+	<a href="https://www.typescriptlang.org/">TypeScript</a>.
 </p>
 
 <p>
-	SG5 serves as a
-	<i>mostly</i> drop-in replacement for SG, meaning it's compatible with the same configuration created by projects using
-	SG, with few exceptions due to the major version bump of Svelte:
+	SG5 serves as a <i>mostly</i> drop-in replacement for SG, meaning it's compatible with the same configuration created by
+	projects using SG, with few exceptions due to the major version bump of Svelte:
 </p>
 
 <ol>
 	<li>
 		<p>
-			Exposed event hooks; where SG uses
-			<a href="https://svelte.dev/docs/svelte/svelte#createEventDispatcher" target="_blank">eventDispatcher</a>, SG5
-			uses
-			<a href="https://svelte.dev/docs/svelte/$props" target="_blank">function props</a>.
+			Exposed event hooks; where SG uses <a
+				href="https://svelte.dev/docs/svelte/svelte#createEventDispatcher"
+				target="_blank">eventDispatcher</a
+			>, SG5 uses <a href="https://svelte.dev/docs/svelte/$props" target="_blank">function props</a>.
 		</p>
 	</li>
 	<li>
@@ -143,57 +144,52 @@ const style: string =
 	></a>
 </h1>
 
-<ul class="blockquote">
-	<li>
-		If you don't already have Svelte 5 installed, <a href="https://svelte.dev/docs/svelte/getting-started">install it</a
-		>, and start a development server.
-	</li>
-	<li>
-		All off these steps are done in the same <code>.svelte</code> file.
-	</li>
-</ul>
+<blockquote>
+	<ul>
+		<li>
+			If you don't already have Svelte 5 installed, <a href="https://svelte.dev/docs/svelte/getting-started"
+				>install it</a
+			>, and start a development server.
+		</li>
+		<li>
+			All off these steps are done in the same <code>.svelte</code> file.
+		</li>
+	</ul>
+</blockquote>
 
 <ol>
 	<li>
 		Start by importing the component and the <code>Item, Size</code> types, as well as the <code>OnChange</code> type, the
 		event function we will utilize in this example -
 	</li>
-	<HighlightSvelte code={imports} />
+	<HighlightSvelte code={codeImports} />
 
 	and create a<code>div</code> wrapper for SG5.
-	<HighlightSvelte code={divWrapper} />
+	<HighlightSvelte code={codeDivWrapper} />
 
 	<li>Specify the specs for the grid, then create an array with a single item.</li>
-	<HighlightSvelte code={spec} />
+	<HighlightSvelte code={codeSpec} />
 
 	We then bind the items and pass the specs to the component as props.
-	<HighlightSvelte code={bindItems} />
+	<HighlightSvelte code={codeBindItems} />
 
 	<li>
-		Add the <code>onChange</code> event prop and pass it a function referance.<br />
-		Provide a widget (a <code>div</code> here, for the sake of example) as a snippet for the item to render.<br /> The
-		<code>children</code>
-		snippet returns multiple properties for us to use. Here, we use the
-		<code>dataItem</code>
-		property to receive the ID of our item, to then be used in our passed
-		<code>div</code> to display the ID of the item.
+		Add the <code>onChange</code> event prop and pass it a function referance.<br /> Provide a widget (a
+		<code>div</code>
+		here, for the sake of example) as a snippet for the item to render.<br /> The <code>children</code> snippet returns
+		multiple properties for us to use. Here, we use the <code>dataItem</code> property to receive the ID of our item, to
+		then be used in our passed <code>div</code> to display the ID of the item.
 	</li>
-	<HighlightSvelte code={eventProp} />
+	<HighlightSvelte code={codeEventProp} />
 
 	Then, create the function to handle the event.
-	<HighlightSvelte code={eventHandler} />
+	<HighlightSvelte code={codeEventHandler} />
 
 	<li>Then, to finish off this example, add some styling to the wrapper and your widget.</li>
-	<HighlightSvelte code={style} />
+	<HighlightSvelte code={codeStyle} />
 
 	Now, with all the steps applied, your example should look like this.<br />
 	<i> Open your browser console and move the item around to see the </i><code>OnChange</code><i> function run. </i>
 
 	<GettingStartedExampleGrid />
 </ol>
-
-<style>
-:global(.demo .svlt-grid-shadow) {
-	border-radius: 5px;
-}
-</style>

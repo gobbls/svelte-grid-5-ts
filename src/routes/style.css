@@ -54,18 +54,6 @@ body {
 	overflow-x: hidden;
 }
 
-p.blockquote,
-ul.blockquote {
-	box-sizing: border-box;
-	border-left: 4px solid var(--sg5-c-indigo-3);
-	padding: 5px 5px 5px 8px;
-	background: var(--sg5-c-quoteblock);
-}
-
-ul.blockquote {
-	padding-left: 25px;
-}
-
 ul li {
 	margin: 10px;
 }
@@ -131,6 +119,7 @@ article ol,
 article ul,
 article li,
 article hr,
+article blockquote,
 article .demo,
 article .examples {
 	max-width: 760px;
@@ -138,6 +127,10 @@ article .examples {
 	margin-right: auto;
 	color: var(--sg5-c-dark-text-1);
 	font-family: var(--sg5-default-font);
+}
+
+article ol p {
+	margin: 0;
 }
 
 article hr {
@@ -205,8 +198,16 @@ article blockquote {
 	border-left: 4px solid var(--sg5-c-indigo-3);
 	padding: 10px 10px 10px 15px;
 	background: var(--sg5-c-quoteblock);
-	margin: 15px 0;
 	line-height: 1.5;
+}
+
+article blockquote ul {
+	margin: 0;
+	padding-left: 15px;
+}
+
+article blockquote ul li {
+	margin: 0;
 }
 
 article .row {
@@ -221,22 +222,12 @@ article .row label {
 	flex-wrap: nowrap;
 }
 
-/*
- * compansate for whitespace blocks making
- * the <pre> block heigher than wanted.
- */
-/*
-article pre {
-	margin-top: -1em;
-	margin-bottom: -1em;
-}
-*/
-
 article code {
 	position: relative;
 	background: var(--sg5-c-bg-text-code) !important;
 	padding: 2px 4px;
 	border-radius: 5px;
+	font-size: 1.2em;
 }
 
 article code.language-html.tag-svelte-script::before,
@@ -323,4 +314,9 @@ article .demo .item .custom-resizer {
 	right: 10px;
 	background: var(--sg5-c-indigo-3);
 	cursor: pointer;
+}
+
+/* Override the defaule grid item style */
+article .demo .svlt-grid-shadow {
+	border-radius: 5px;
 }

@@ -4,7 +4,7 @@ import type { Item, Size } from '../lib/types/item';
 import type { OnChange } from '../lib/types/funcs';
 
 const COL = 10;
-const cols = [[200, COL]];
+const cols = [[1200, COL]];
 
 let items: Item[] = $state([
 	{
@@ -36,7 +36,7 @@ function handleOnChange({ ...data }: OnChange): void {
 
 <div class="sg5-wrapper">
 	<Grid bind:items={items} cols={cols} gap={[2, 2]} rowHeight={50} fastStart onChange={handleOnChange}>
-		{#snippet children({ dataItem })}
+		{#snippet children({ dataItem }: { dataItem: Item })}
 			<div class="sg5-item">{dataItem.id}</div>
 		{/snippet}
 	</Grid>

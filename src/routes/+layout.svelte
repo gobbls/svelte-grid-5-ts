@@ -36,7 +36,6 @@ function dismissModalWithKey(ev: KeyboardEvent) {
 </script>
 
 <svelte:head>
-	<title>Home</title>
 	{@html ashes}
 </svelte:head>
 
@@ -110,9 +109,6 @@ function dismissModalWithKey(ev: KeyboardEvent) {
 	line-height: var(--sg5-header-height);
 	background: var(--sg5-c-bg-navbar);
 	border-bottom: 1px solid black;
-	box-shadow:
-		0 20px 20px -20px var(--sg5-c-bg-navbar),
-		0 20px 20px -20px var(--sg5-c-bg-navbar);
 }
 
 .modal {

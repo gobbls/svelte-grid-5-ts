@@ -19,6 +19,10 @@ import SerializeRestore from './SerializeRestore.svelte';
 const anchors = navGroups.find((t: Group) => t.title == 'Examples')!.items;
 </script>
 
+<svelte:head>
+	<title>SG5 | Examples</title>
+</svelte:head>
+
 <h1>Examples</h1>
 
 <ul>

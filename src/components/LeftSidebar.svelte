@@ -63,7 +63,7 @@ onMount(() => {
 	margin-left: auto;
 	padding: 12px 10px;
 	background: var(--sg5-c-bg-left-sidebar);
-	overflow: hidden;
+	overflow-y: scroll;
 }
 
 .wrapper.modal {
