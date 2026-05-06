@@ -54,6 +54,7 @@ body {
 	overflow-x: hidden;
 }
 
+ol li,
 ul li {
 	margin: 10px;
 }
@@ -189,6 +190,7 @@ article ol {
 }
 
 article p a,
+article ol a,
 article ul a {
 	color: #a8b1ff;
 }

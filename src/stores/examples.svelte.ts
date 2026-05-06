@@ -7,8 +7,8 @@ export let navGroups: Group[] = $state([
 		open: false,
 		items: [
 			{
-				title: 'What is svelte-grid-5-ts?',
-				anchor: '#what-is-svelte-grid-5-ts'
+				title: 'Introduction',
+				anchor: '#introduction'
 			},
 			{
 				title: 'Getting Started',

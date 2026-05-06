@@ -1,7 +1,7 @@
 <script lang="ts">
 import { onMount } from 'svelte';
 import Grid from '../../lib/index.svelte';
-import type { Item, Size } from '../../lib/types/item';
+import type { Item, Size, Value } from '../../lib/types/item';
 import type { OnMount, OnResize } from '$lib';
 
 const cols = [
@@ -107,7 +107,7 @@ const setCols = (e: OnResize | OnMount) => (columns = e.cols);
 
 function reset() {
 	items = items.map((value: Item, index: number) => {
-		const restore = layoutOriginal[index][columns];
+		const restore: Value = layoutOriginal[index][columns];
 		return {
 			...value,
 			[columns]: restore
@@ -124,7 +124,12 @@ onMount(() => {
 });
 </script>
 
-<h1 id="responsive-serialize-restore">Responsive - Serialize / Restore (!!NEEDS FIX!!)</h1>
+<h1 id="responsive-serialize-restore">Responsive - Serialize / Restore</h1>
+
+<blockquote>
+	This functionality was previously broken by me, due to a misundarstanding when translating the functionality to TS.
+	This is now fixed.
+</blockquote>
 
 <p>This is a simple demo of responsiveness and localStorage.</p>
 
