@@ -176,8 +176,11 @@ const codeStyle: string =
 	</li>
 
 	<li>
-		Specify the specs for the grid, then create an array with a single item. <HighlightSvelte code={codeSpec} /> Then place
-		the <code>Grid</code> component in the wrapper, bind the items and pass the specs to the component as props. <HighlightSvelte
+		Specify the specs for the grid, then create an array with a single item. <HighlightSvelte code={codeSpec} />
+	</li>
+
+	<li>
+		Place the <code>Grid</code> component in the wrapper, bind the items and pass the specs to the component as props. <HighlightSvelte
 			code={codeBindItems}
 		/>
 	</li>
@@ -187,8 +190,11 @@ const codeStyle: string =
 		a widget &mdash; a <code>div</code> here, for the sake of example &mdash; as a snippet for the item to render. The
 		<code>children</code>
 		snippet returns multiple properties for us to use. Here, we use the <code>dataItem</code> property to receive the ID
-		of our item to be used in our <code>div</code>. <HighlightSvelte code={codeEventProp} /> Then, create a function to fire
-		when the event occurs. <Highlight language={typescript} code={codeEventHandler} />
+		of our item to be used in our <code>div</code>. <HighlightSvelte code={codeEventProp} />
+	</li>
+
+	<li>
+		Create a function to fire when the event occurs. <Highlight language={typescript} code={codeEventHandler} />
 	</li>
 
 	<li>
