@@ -51,10 +51,10 @@ let items: Item[] = $state([
 </p>
 
 <blockquote>
-	You will find that most of these exampes use the breakpoint <code>[[1200, 10]]</code>.<br />
+	You will find that most of these examples use the breakpoint <code>[[1200, 10]]</code>.<br />
 	<code>1200</code> &mdash; when there is a single breakpoint &mdash; can be pretty much be any number since there are
-	no other breakpoints to listen for when resizing the viewport. But to be explicit, I have used <code>1200</code>,
-	since that is a good baseline if you want to add more breakpoints for responsiveness.
+	no other breakpoints to listen for when resizing the container. But to be explicit, I have used <code>1200</code>,
+	since it's a decent baseline if you want to add more breakpoints for responsiveness.
 </blockquote>
 
 <div class="demo">

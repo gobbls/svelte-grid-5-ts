@@ -45,7 +45,7 @@ let items: Item[] = $state([
 
 <h2 id="min-max-size">Min / Max size</h2>
 
-<p>Control how much can user resize an item.</p>
+<p>Control how much a user can resize an item.</p>
 
 <blockquote>
 	If a <code>min</code> value is not set, a user can make the item so small that it is practically impossible to

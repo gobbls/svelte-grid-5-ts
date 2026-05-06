@@ -96,18 +96,18 @@ function remove(item: Item): void {
 
 <p>
 	This demo shows what happens when items are dynamically added and removed. You can remove an item by clicking its “x”
-	button, and add a new one with one of the two buttons below. After adding an element, you can use the <code
+	button, and add new ones with one of the two buttons below. After adding an element, you can use the <code
 		>normalize</code
 	>
-	or <code>adjust</code> functions. But this will actually be used to prevent a situation where your box will overlap with
-	another.
+	or <code>adjust</code> functions. These will be used to prevent a situation where your item will overlap another.
 </p>
 
 <button onclick={addToStart}>Add random size to start</button>
+
 <button onclick={add}>Add random size</button>
+
 <label>
-	<input bind:checked={adjustAfterRemove} type="checkbox" />
-	Adjust elements after removing an item.
+	<input bind:checked={adjustAfterRemove} type="checkbox" /> Adjust elements after removing an item.
 </label>
 
 <div class="demo">

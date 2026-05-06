@@ -60,14 +60,19 @@ $effect(() => {
 });
 
 const example: string =
-	`<!-- You can use a custom container as a scroll target -->
+	`<script lang="ts">
+  let container: HTMLElement | undefined;
+</scr` +
+	'ipt>' +
+	`\n\n<!-- You can use a custom container as a scroll target. -->
 <div bind:this={container}>
-  <Grid {...} scroller={container} />
-</div>
-
-<script>
-let container;
-</scr` + `ipt>`;
+  <Grid
+    /* ... */
+    scroller={container}
+    >
+      /* ... */
+  </Grid>
+</div>`;
 </script>
 
 <h1 id="autoscroll">Autoscroll</h1>
@@ -75,8 +80,15 @@ let container;
 <p>Simple auto-scrolling that only requires a reference to your container.</p>
 
 <p>
-	Autoscrolling occurs when the cursor is close to the edges of your container. This does not happen when the bottom or
-	top of your widget is close to the edges
+	Autoscrolling occurs when the cursor is close to the bottom edge of your container when dragging or resizing an
+	element.
+</p>
+
+<p>
+	<em
+		>This does not happen when the bottom or top of an item is close to the edge. It's the <strong>cursor's</strong> position
+		that is used for this feature.</em
+	>
 </p>
 
 <label>
@@ -91,7 +103,7 @@ let container;
 	<input type="number" size="5" bind:value={sensor} />
 </label>
 
-<blockquote>Set the distance from the cursor to the edge (The default value is 20)</blockquote>
+<p>Set the distance from the cursor to the edge at which the autoscroller kicks in (the default value is 20).</p>
 
 <div class="demo" class:container={!useDocument} bind:this={container}>
 	<Grid bind:items={items} cols={cols} gap={[5, 5]} rowHeight={100} scroller={scroller} sensor={sensor}>
@@ -102,10 +114,6 @@ let container;
 </div>
 
 <style>
-pre {
-	margin: unset;
-}
-
 .demo {
 	margin-left: 0;
 }

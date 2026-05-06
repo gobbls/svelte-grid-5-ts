@@ -45,7 +45,12 @@ let items: Item[] = $state([
 
 <h1 id="events">Events</h1>
 
-<p>This particular example has dragging and resizing turned off.</p>
+<p>You may disable <code>dragging</code> and <code>resizing</code></p>
+
+<blockquote>
+	Combining these two does not achieve the same effect as <code>fixed</code>; these may be moved in response to movement
+	of another item, whereas <code>fixed</code> will not.
+</blockquote>
 
 <div class="demo">
 	<Grid bind:items={items} cols={cols} gap={[5, 5]} rowHeight={50}>

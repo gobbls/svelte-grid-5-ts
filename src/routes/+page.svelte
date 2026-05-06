@@ -31,7 +31,7 @@ const codeSpec: string =
       id: 'move me around',   // Has to be unique for each item (a UUID for example).
       data: '',               // The data you want to pass to your widget.
       [COL]: {                // 'COL' is used to match the grid column size.
-      	fixed: false,         // Not draggable and wont be budged by other moving items, but can be resized.
+      	fixed: false,         // Cannot be moved or resized.
       	resizable: true,      // If the item can be resized.
       	draggable: true,      // If the item can be dragged around.
       	customDragger: false, // If you want to use a custom dragger, maybe an icon?

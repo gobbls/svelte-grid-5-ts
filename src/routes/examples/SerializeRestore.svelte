@@ -67,9 +67,12 @@ onMount((): void => {
 
 <h1 id="serialize-restore">Serialize / Restore</h1>
 
-<p>This simple demo synchronizes to localStorage. Try moving and resizing elements, then reloading.</p>
+<p>
+	This simple demo stores a copy of the items in a browser's <code>localStorage</code>. Try moving and resizing the
+	items, then reloading. Watch the positions and sizes be restored.
+</p>
 
-<blockquote>Please clear your local storage if you have problems with this example.</blockquote>
+<blockquote>Try clearing your <code>localStorage</code> if you have problems with this example.</blockquote>
 
 <button onclick={reset}>Reset</button>
 

@@ -44,7 +44,7 @@ onMount(() => {
 <h1 id="fill-space">Fill Space</h1>
 
 <p>
-	<code>fillSpace</code> means that each grid element (except active element) must find its own position.
+	<code>fillSpace</code> means that each grid element (except the active element) must find its own position.
 </p>
 
 <label>

@@ -50,8 +50,9 @@ let items: Item[] = $state([
 </p>
 
 <p>
-	<em>Refresh the browser to see this in effect. Wheras other examples shuffles their items into their positions,</em
-	><code>fastStart</code><em> disables this animation step.</em>
+	Refresh your browser to see this in effect. Where other examples shuffles their items into their positions,<code
+		>fastStart</code
+	> disables this animation.
 </p>
 
 <div class="demo">

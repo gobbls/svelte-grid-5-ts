@@ -127,20 +127,18 @@ onMount(() => {
 <h1 id="responsive-serialize-restore">Responsive - Serialize / Restore</h1>
 
 <blockquote>
-	This functionality was previously broken by me, due to a misundarstanding when translating the functionality to TS.
-	This is now fixed.
+	This functionality was previously broken by me, due to a misunderstandings when translating the functionality to
+	TypeScript. <em>This now works as intended</em>.
 </blockquote>
 
-<p>This is a simple demo of responsiveness and localStorage.</p>
-
 <p>
-	This demonstrates that localstorage updates when changes to a breakpoint spec occurs, while maintaining the breakpoint
-	specs that were not modified.
+	This demonstrates that <code>localStorage</code> updates when changes to breakpoint spec occurs &mdash; size, position,
+	draggable, etc &mdash; while maintaining the breakpoint specs that were not modified.
 </p>
 
-<p>Resize your window to see the layout change to fit the new breakpoint.</p>
+<p>Resize your window to see the layout change once a breakpoint's threshold is crossed.</p>
 
-<blockquote>Please clear your local storage if you have problems with this example.</blockquote>
+<blockquote>Try clearing your <code>localStorage</code> if you have problems with this example.</blockquote>
 
 <button onclick={reset}>reset</button>
 

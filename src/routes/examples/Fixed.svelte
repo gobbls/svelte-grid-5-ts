@@ -62,14 +62,12 @@ let items: Item[] = $state([
 
 <h1 id="fixed">Fixed</h1>
 
-<p>Fixed elements cannot be moved or resized. Other elements move themselves around a fixed element.</p>
+<p>Fixed elements cannot be moved or resized. Other elements move themselves around it.</p>
 
 <div class="demo">
 	<Grid bind:items={items} cols={cols} gap={[5, 5]} rowHeight={50}>
 		{#snippet children({ dataItem }: { dataItem: Item })}
-			<div class="item">
-				{dataItem.data}
-			</div>
+			<div class="item">{dataItem.data}</div>
 		{/snippet}
 	</Grid>
 </div>

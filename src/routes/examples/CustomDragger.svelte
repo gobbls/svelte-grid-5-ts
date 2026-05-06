@@ -46,8 +46,8 @@ let items: Item[] = $state([
 <h1 id="custom-dragger">Custom Dragger</h1>
 
 <p>
-	By setting the <code>customDragger</code> property to <code>true</code>, you can specify the element to which the drag
-	event will be assigned
+	By setting the <code>customDragger</code> property to <code>true</code>, you may specify the element to which the drag
+	event will be assigned.
 </p>
 
 <div class="demo">

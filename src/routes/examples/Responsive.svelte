@@ -4,8 +4,8 @@ import type { Item, Size } from '../../lib/types/item';
 
 const cols = [
 	[750, 5],
-	[400, 3],
-	[200, 1]
+	[700, 3],
+	[600, 1]
 ];
 
 let items: Item[] = $state([
@@ -145,11 +145,13 @@ let items: Item[] = $state([
 
 <p>
 	<em
-		>Shoutout to <a href="https://github.com/yoh-extradat">yoh-extradat on Github</a>
+		>Shout-out to <a href="https://github.com/yoh-extradat">yoh-extradat on Github</a>
 		for <a href="https://github.com/valqelyan/svelte-grid/issues/140#issuecomment-1320392413">explaining</a> this one. The
-		original docs were a bit ambiguous.</em
+		original docs were a bit ambiguous to me.</em
 	>
 </p>
+
+<p>Change the size of your window and watch the layout change once you get past a specified breakpoint.</p>
 
 <blockquote>
 	The width you provide is not the width of the screen, but the width of the container that the <code
