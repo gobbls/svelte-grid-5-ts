@@ -35,7 +35,7 @@ with few exceptions due to the major version bump of Svelte:
 **via NPM**
 
 ```code
-npm i svelte-grid-5-ts --save-dev
+npm i svelte-grid-5-ts
 ```
 
 ## Getting Started
