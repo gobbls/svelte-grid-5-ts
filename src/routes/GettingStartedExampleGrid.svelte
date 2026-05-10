@@ -35,7 +35,14 @@ function handleOnChange({ ...data }: OnChange): void {
 </script>
 
 <div class="sg5-wrapper">
-	<Grid bind:items={items} cols={cols} gap={[2, 2]} rowHeight={50} fastStart={true} onChange={handleOnChange}>
+	<Grid
+		bind:items={items}
+		cols={cols}
+		gap={[2, 2]}
+		rowHeight={50}
+		fastStart={true}
+		onChange={handleOnChange}
+	>
 		{#snippet children({ dataItem }: { dataItem: Item })}
 			<div class="sg5-item">{dataItem.id}</div>
 		{/snippet}
