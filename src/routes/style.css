@@ -115,6 +115,7 @@ ul li {
  *************************/
 
 article h1,
+article h2,
 article p,
 article ol,
 article ul,
@@ -141,10 +142,10 @@ article hr {
 	background-color: var(--sg5-c-group-separator);
 }
 
-article h1 {
+article h1,
+article h2 {
 	position: relative;
-	font-size: 28px;
-	scroll-margin-top: 50px;
+	scroll-margin-top: 20px;
 }
 
 article h1 a.header-anchor {
@@ -189,6 +190,7 @@ article ol {
 	box-sizing: border-box;
 }
 
+blockquote a,
 article p a,
 article ol a,
 article ul a {
@@ -230,6 +232,10 @@ article code {
 	padding: 2px 4px;
 	border-radius: 5px;
 	font-size: 1.2em;
+}
+
+table pre {
+	margin: unset;
 }
 
 article code.language-html.tag-svelte-script::before,

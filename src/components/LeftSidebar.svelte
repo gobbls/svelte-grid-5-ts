@@ -35,9 +35,11 @@ onMount(() => {
 			<div class="group">
 				<div class="title">
 					<a class="nav clickable" href={group.url}><h4>{group.title}</h4></a>
-					<button class="action clickable" onclick={(e) => toggleGroup(e, group)}>
-						<ChevronIcon direction={group.open ? 'down' : 'left'} />
-					</button>
+					{#if group.items.length > 0}
+						<button class="action clickable" onclick={(e) => toggleGroup(e, group)}>
+							<ChevronIcon direction={group.open ? 'down' : 'left'} />
+						</button>
+					{/if}
 				</div>
 				{#if group.open}
 					<div class="list" transition:slide={{ duration: 200 }}>

@@ -97,12 +97,16 @@ export let navGroups: Group[] = $state([
 				anchor: '#helper-functions'
 			},
 			{
-				title: 'Responsiveness',
-				anchor: '#responsiveness'
-			},
-			{
 				title: 'Props',
 				anchor: '#props'
+			},
+			{
+				title: 'Exposed Types',
+				anchor: '#exposed-types'
+			},
+			{
+				title: 'Callback Parameter Types',
+				anchor: '#callback-parameter-types'
 			}
 		]
 	},

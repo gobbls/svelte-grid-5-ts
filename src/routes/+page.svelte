@@ -61,9 +61,9 @@ const untab = (svlt: string): string => svlt.replaceAll('\t', '    ');
 
 <hr />
 
-<h1 id="getting-started">
+<h2 id="getting-started">
 	Getting Started<a aria-label="Permalink to 'Getting Started'" class="header-anchor" href="#getting-started"></a>
-</h1>
+</h2>
 
 <ol>
 	<li>
