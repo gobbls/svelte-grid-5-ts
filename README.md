@@ -44,8 +44,9 @@ npm i svelte-grid-5-ts --save-dev
     1. If you don't already have Svelte 5 installed, [install it](https://svelte.dev/docs/svelte/getting-started).
     2. Install [SG5](https://www.npmjs.com/package/svelte-grid-5-ts) with `$ npm i svelte-grid-5-ts`
 
-> [!NOTE]
-> All off these steps are done in the same `.svelte` file.
+    >
+    > All off these steps are done in the same `.svelte` file.
+    >
 
 2.  Start by importing the main `Grid` component and the `Item, Size` types, as well as the `OnChange` type, as it will be used in this example. 
 
@@ -136,7 +137,7 @@ npm i svelte-grid-5-ts --save-dev
 
 7.  Create a function to fire when the event occurs.
 
-    ```Svelte
+    ```TypeScript
     /* ... */
     let updates: number = $state(0);
 
@@ -149,7 +150,7 @@ npm i svelte-grid-5-ts --save-dev
 
 8.  To finish off this example, add some styling to the wrapper and your widget. 
 
-    ```Svelte
+    ```HTML
     <style>
     .sg5-wrapper {
         max-width: 760px;
@@ -171,8 +172,9 @@ npm i svelte-grid-5-ts --save-dev
 
 Now, with all the steps applied, your example should look like this.
 
-> [!NOTE]
+>
 > Open your browser console and move the item around to see the `OnChange` function run.
+>
 
 <div style="text-align: center;">
     <img alt="A preview of the example code above" src="/static/example-preview.png" />
