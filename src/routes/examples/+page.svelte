@@ -1,22 +1,39 @@
 <script lang="ts">
 import { navGroups } from '../../stores/examples.svelte';
 import type { Group } from '../../types/routes';
+import CodeExampleToggle from './_CodeExampleToggle.svelte';
+
 import AddRemove from './AddRemove.svelte';
+import AddRemoveString from './AddRemove.svelte?raw';
 import AutoScroll from './AutoScroll.svelte';
+import AutoScrollString from './AutoScroll.svelte?raw';
 import Basic from './Basic.svelte';
+import BasicString from './Basic.svelte?raw';
 import CustomDragger from './CustomDragger.svelte';
+import CustomDraggerString from './CustomDragger.svelte?raw';
 import CustomResizer from './CustomResizer.svelte';
+import CustomResizerString from './CustomResizer.svelte?raw';
 import Events from './Events.svelte';
+import EventsString from './Events.svelte?raw';
 import FastStart from './FastStart.svelte';
+import FastStartString from './FastStart.svelte?raw';
 import FillSpace from './FillSpace.svelte';
+import FillSpaceString from './FillSpace.svelte?raw';
 import Fixed from './Fixed.svelte';
+import FixedString from './Fixed.svelte?raw';
 import Gap from './Gap.svelte';
+import GapString from './Gap.svelte?raw';
 import MinMaxSize from './MinMaxSize.svelte';
+import MinMaxSizeString from './MinMaxSize.svelte?raw';
 import Responsive from './Responsive.svelte';
+import ResponsiveString from './Responsive.svelte?raw';
 import ResponsiveSerializeRestore from './ResponsiveSerializeRestore.svelte';
+import ResponsiveSerializeRestoreString from './ResponsiveSerializeRestore.svelte?raw';
 import SerializeRestore from './SerializeRestore.svelte';
+import SerializeRestoreString from './SerializeRestore.svelte?raw';
 
 const anchors = navGroups.find((t: Group) => t.title == 'Examples')!.items;
+const untab = (svlt: string): string => svlt.replaceAll('\t', '    ');
 </script>
 
 <svelte:head>
@@ -33,33 +50,33 @@ const anchors = navGroups.find((t: Group) => t.title == 'Examples')!.items;
 
 <div class="examples">
 	<hr />
-	<Basic />
+	<CodeExampleToggle Example={Basic} asString={BasicString} />
 	<hr />
-	<Gap />
+	<CodeExampleToggle Example={Gap} asString={GapString} />
 	<hr />
-	<Responsive />
+	<CodeExampleToggle Example={Responsive} asString={ResponsiveString} />
 	<hr />
-	<AddRemove />
+	<CodeExampleToggle Example={AddRemove} asString={AddRemoveString} />
 	<hr />
-	<MinMaxSize />
+	<CodeExampleToggle Example={MinMaxSize} asString={MinMaxSizeString} />
 	<hr />
-	<Fixed />
+	<CodeExampleToggle Example={Fixed} asString={FixedString} />
 	<hr />
-	<SerializeRestore />
+	<CodeExampleToggle Example={SerializeRestore} asString={SerializeRestoreString} />
 	<hr />
-	<Events />
+	<CodeExampleToggle Example={Events} asString={EventsString} />
 	<hr />
-	<ResponsiveSerializeRestore />
+	<CodeExampleToggle Example={ResponsiveSerializeRestore} asString={ResponsiveSerializeRestoreString} />
 	<hr />
-	<CustomDragger />
+	<CodeExampleToggle Example={CustomDragger} asString={CustomDraggerString} />
 	<hr />
-	<CustomResizer />
+	<CodeExampleToggle Example={CustomResizer} asString={CustomResizerString} />
 	<hr />
-	<FastStart />
+	<CodeExampleToggle Example={FastStart} asString={FastStartString} />
 	<hr />
-	<FillSpace />
+	<CodeExampleToggle Example={FillSpace} asString={FillSpaceString} />
 	<hr />
-	<AutoScroll />
+	<CodeExampleToggle Example={AutoScroll} asString={AutoScrollString} />
 </div>
 
 <style>

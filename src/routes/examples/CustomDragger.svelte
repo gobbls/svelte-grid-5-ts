@@ -43,7 +43,7 @@ let items: Item[] = $state([
 ]);
 </script>
 
-<h1 id="custom-dragger">Custom Dragger</h1>
+<h2 id="custom-dragger">Custom Dragger</h2>
 
 <p>
 	By setting the <code>customDragger</code> property to <code>true</code>, you may specify the element to which the drag

@@ -43,7 +43,7 @@ let items: Item[] = $state([
 ]);
 </script>
 
-<h1 id="custom-resizer">Custom Resizer</h1>
+<h2 id="custom-resizer">Custom Resizer</h2>
 
 <p>
 	By setting the <code>customResizer</code> property to <code>true</code>, you can specify the element to which the

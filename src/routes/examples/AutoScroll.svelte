@@ -46,18 +46,9 @@ let items: Item[] = $state([
 
 let container: HTMLDivElement | undefined = $state();
 let documentContainer: HTMLDivElement | undefined = $state();
-let scroller: HTMLDivElement | undefined = $state();
 let useDocument: boolean = $state(false);
+let scroller: HTMLDivElement | undefined = $derived(useDocument ? documentContainer : container);
 let sensor: number = $state(20);
-
-onMount(() => {
-	documentContainer = document.getElementsByTagName('main')[0] as HTMLDivElement;
-	scroller = container;
-});
-
-$effect(() => {
-	scroller = useDocument ? documentContainer : container;
-});
 
 const example: string =
 	`<script lang="ts">
@@ -73,9 +64,13 @@ const example: string =
       /* ... */
   </Grid>
 </div>`;
+
+onMount(() => {
+	documentContainer = document.getElementsByTagName('main')[0] as HTMLDivElement;
+});
 </script>
 
-<h1 id="autoscroll">Autoscroll</h1>
+<h2 id="autoscroll">Autoscroll</h2>
 
 <p>Simple auto-scrolling that only requires a reference to your container.</p>
 

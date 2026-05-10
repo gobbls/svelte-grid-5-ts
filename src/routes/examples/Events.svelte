@@ -43,7 +43,7 @@ let items: Item[] = $state([
 ]);
 </script>
 
-<h1 id="events">Events</h1>
+<h2 id="events">Events</h2>
 
 <p>You may disable <code>dragging</code> and <code>resizing</code></p>
 

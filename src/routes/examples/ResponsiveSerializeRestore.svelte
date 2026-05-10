@@ -124,7 +124,7 @@ onMount(() => {
 });
 </script>
 
-<h1 id="responsive-serialize-restore">Responsive - Serialize / Restore</h1>
+<h2 id="responsive-serialize-restore">Responsive - Serialize / Restore</h2>
 
 <blockquote>
 	This functionality was previously broken by me, due to a misunderstandings when translating the functionality to

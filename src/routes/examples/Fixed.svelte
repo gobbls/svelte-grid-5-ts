@@ -60,7 +60,7 @@ let items: Item[] = $state([
 ]);
 </script>
 
-<h1 id="fixed">Fixed</h1>
+<h2 id="fixed">Fixed</h2>
 
 <p>Fixed elements cannot be moved or resized. Other elements move themselves around it.</p>
 
