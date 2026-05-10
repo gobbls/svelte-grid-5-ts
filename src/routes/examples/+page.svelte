@@ -1,7 +1,7 @@
 <script lang="ts">
 import { navGroups } from '../../stores/examples.svelte';
 import type { Group } from '../../types/routes';
-import CodeExampleToggle from './_CodeExampleToggle.svelte';
+import CodeExampleToggle from '../../components/CodeExampleToggle.svelte';
 
 import AddRemove from './AddRemove.svelte';
 import AddRemoveString from './AddRemove.svelte?raw';

@@ -1,7 +1,7 @@
 <script lang="ts">
 import { HighlightSvelte, Highlight } from 'svelte-highlight';
 import typescript from 'svelte-highlight/languages/typescript';
-import CodeExampleToggle from './examples/_CodeExampleToggle.svelte';
+import CodeExampleToggle from '../components/CodeExampleToggle.svelte';
 
 import Demo from './Demo.svelte';
 import GettingStartedExampleGrid from './GettingStartedExampleGrid.svelte';
