@@ -38,16 +38,14 @@ with few exceptions due to the major version bump of Svelte:
 npm i svelte-grid-5-ts --save-dev
 ```
 
----
-
 ## Getting Started
 
 1.  Set up a project:
     1. If you don't already have Svelte 5 installed, [install it](https://svelte.dev/docs/svelte/getting-started).
     2. Install [SG5](https://www.npmjs.com/package/svelte-grid-5-ts) with `$ npm i svelte-grid-5-ts`
 
-    > [!NOTE]
-    > All off these steps are done in the same `.svelte` file.
+> [!NOTE]
+> All off these steps are done in the same `.svelte` file.
 
 2.  Start by importing the main `Grid` component and the `Item, Size` types, as well as the `OnChange` type, as it will be used in this example. 
 
