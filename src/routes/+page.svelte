@@ -1,9 +1,11 @@
 <script lang="ts">
 import { HighlightSvelte, Highlight } from 'svelte-highlight';
 import typescript from 'svelte-highlight/languages/typescript';
+import CodeExampleToggle from './examples/_CodeExampleToggle.svelte';
 
 import Demo from './Demo.svelte';
 import GettingStartedExampleGrid from './GettingStartedExampleGrid.svelte';
+import GettingStartedExampleGridString from './GettingStartedExampleGrid.svelte?raw';
 
 import SpecString from './_snippets/Spec.svelte?raw';
 import ImportsString from './_snippets/Imports.svelte?raw';
@@ -129,6 +131,6 @@ const untab = (svlt: string): string => svlt.replaceAll('\t', '    ');
 			Open your browser console and move the item around to see the <code>OnChange</code> function run.
 		</blockquote>
 
-		<GettingStartedExampleGrid />
+		<CodeExampleToggle Example={GettingStartedExampleGrid} asString={GettingStartedExampleGridString} />
 	</li>
 </ol>
