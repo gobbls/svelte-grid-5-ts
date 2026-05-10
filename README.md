@@ -1,5 +1,5 @@
-<div style="text-align: center;">
-    <h1>SG5 — <em>svelte-grid-5-ts</em></h1>
+<div align="center">
+    <h1>SG5 — <em>Svelte-Grid-5-TS</em></h1>
     A fork of <a href="https://svelte-grid.vercel.app/">Svelte-grid</a>.
     <img alt="Preview of the moving and shifting functionality" src="/static/preview.gif" />
 </div>
