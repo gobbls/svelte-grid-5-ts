@@ -70,7 +70,9 @@ onMount(() => {
 });
 </script>
 
-<h2 id="autoscroll">Autoscroll</h2>
+<h2 id="autoscroll">
+	Autoscroll<a aria-label="Permalink to 'autoscroll'" class="header-anchor" href="#autoscroll"></a>
+</h2>
 
 <p>Simple auto-scrolling that only requires a reference to your container.</p>
 

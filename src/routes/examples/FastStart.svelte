@@ -43,7 +43,9 @@ let items: Item[] = $state([
 ]);
 </script>
 
-<h2 id="fast-start">Fast Start</h2>
+<h2 id="fast-start">
+	Fast Start<a aria-label="Permalink to 'fast-start'" class="header-anchor" href="#fast-start"></a>
+</h2>
 
 <p>
 	Set <code>fastStart</code> property to <code>true</code> to disable animation on startup.

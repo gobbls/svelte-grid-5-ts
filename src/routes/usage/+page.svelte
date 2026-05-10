@@ -75,7 +75,9 @@ const codeOnPointerUp: string = `interface OnPointerUp {
 	<title>SG5 | Usage</title>
 </svelte:head>
 
-<h1>Usage</h1>
+<h1 id="usage">
+	Usage<a aria-label="Permalink to 'usage'" class="header-anchor" href="#usage"></a>
+</h1>
 
 <!----------------------------------------------------------->
 
@@ -93,7 +95,9 @@ const codeOnPointerUp: string = `interface OnPointerUp {
 
 	<!----------------------------------------------------------->
 
-	<h2 id="basic-usage">The Basic Example</h2>
+	<h2 id="basic-usage">
+		The Basic Example<a aria-label="Permalink to 'basic-usage'" class="header-anchor" href="#basic-usage"></a>
+	</h2>
 
 	<HighlightSvelte code={untab(BasicGridString)} />
 
@@ -101,7 +105,9 @@ const codeOnPointerUp: string = `interface OnPointerUp {
 
 	<!----------------------------------------------------------->
 
-	<h2 id="how-to-style">How to Style</h2>
+	<h2 id="how-to-style">
+		How to Style<a aria-label="Permalink to 'how-to-style'" class="header-anchor" href="#how-to-style"></a>
+	</h2>
 
 	<p>
 		You can apply styles to a selector globally, use the <code>:global(...)</code> modifier.
@@ -122,7 +128,9 @@ const codeOnPointerUp: string = `interface OnPointerUp {
 
 	<!----------------------------------------------------------->
 
-	<h2 id="helper-functions">Helper Functions</h2>
+	<h2 id="helper-functions">
+		Helper Functions<a aria-label="Permalink to 'helper-functions'" class="header-anchor" href="#helper-functions"></a>
+	</h2>
 
 	<p>The helper function is exported from the same location as <code>Grid</code>;</p>
 
@@ -169,7 +177,9 @@ const codeOnPointerUp: string = `interface OnPointerUp {
 
 <!----------------------------------------------------------->
 
-<h2 id="props">Props</h2>
+<h2 id="props">
+	Props<a aria-label="Permalink to 'props'" class="header-anchor" href="#props"></a>
+</h2>
 
 <div class="table-wrapper">
 	<table>
@@ -295,7 +305,9 @@ const codeOnPointerUp: string = `interface OnPointerUp {
 
 <!----------------------------------------------------------->
 
-<h2 id="exposed-types">Exposed Types</h2>
+<h2 id="exposed-types">
+	Exposed Types<a aria-label="Permalink to 'exposed-types'" class="header-anchor" href="#exposed-types"></a>
+</h2>
 
 <div class="table-wrapper">
 	<table>
@@ -342,7 +354,9 @@ const codeOnPointerUp: string = `interface OnPointerUp {
 
 <!----------------------------------------------------------->
 
-<h2 id="callback-parameter-types">Callback Parameter Types</h2>
+<h2 id="callback-parameter-types">
+	Callback Parameter Types<a aria-label="Permalink to 'exposed-types'" class="header-anchor" href="#exposed-types"></a>
+</h2>
 
 <div class="table-wrapper">
 	<table>

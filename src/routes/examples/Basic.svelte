@@ -43,7 +43,9 @@ let items: Item[] = $state([
 ]);
 </script>
 
-<h2 id="basic">Basic</h2>
+<h2 id="basic">
+	Basic<a aria-label="Permalink to 'basic'" class="header-anchor" href="#basic"></a>
+</h2>
 
 <p>
 	Drag some boxes around, resize them. This is a basic, non-responsive layout. In order to make it responsive you have

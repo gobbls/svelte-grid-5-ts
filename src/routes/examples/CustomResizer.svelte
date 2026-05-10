@@ -43,7 +43,9 @@ let items: Item[] = $state([
 ]);
 </script>
 
-<h2 id="custom-resizer">Custom Resizer</h2>
+<h2 id="custom-resizer">
+	Custom Resizer<a aria-label="Permalink to 'custom-resizer'" class="header-anchor" href="#custom-resizer"></a>
+</h2>
 
 <p>
 	By setting the <code>customResizer</code> property to <code>true</code>, you can specify the element to which the

@@ -124,7 +124,13 @@ onMount(() => {
 });
 </script>
 
-<h2 id="responsive-serialize-restore">Responsive - Serialize / Restore</h2>
+<h2 id="responsive-serialize-restore">
+	Responsive - Serialize / Restore<a
+		aria-label="Permalink to 'responsive-serialize-restore'"
+		class="header-anchor"
+		href="#responsive-serialize-restore"
+	></a>
+</h2>
 
 <blockquote>
 	This functionality was previously broken by me, due to a misunderstandings when translating the functionality to

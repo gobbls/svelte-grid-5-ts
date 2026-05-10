@@ -148,7 +148,8 @@ article h2 {
 	scroll-margin-top: 20px;
 }
 
-article h1 a.header-anchor {
+article h1 a.header-anchor,
+article h2 a.header-anchor {
 	position: absolute;
 	left: 0;
 	opacity: 0;
@@ -170,11 +171,13 @@ article h1 a.header-anchor {
 	}
 }
 
-article h1:hover a.header-anchor {
+article h1:hover a.header-anchor,
+article h2:hover a.header-anchor {
 	opacity: 1;
 }
 
-article h1 a.header-anchor::before {
+article h1 a.header-anchor::before,
+article h2 a.header-anchor::before {
 	content: '#';
 }
 

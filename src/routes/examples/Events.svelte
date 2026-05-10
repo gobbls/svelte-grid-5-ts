@@ -43,7 +43,9 @@ let items: Item[] = $state([
 ]);
 </script>
 
-<h2 id="events">Events</h2>
+<h2 id="events">
+	Events<a aria-label="Permalink to 'events'" class="header-anchor" href="#events"></a>
+</h2>
 
 <p>You may disable <code>dragging</code> and <code>resizing</code></p>
 

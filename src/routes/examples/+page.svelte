@@ -40,7 +40,9 @@ const untab = (svlt: string): string => svlt.replaceAll('\t', '    ');
 	<title>SG5 | Examples</title>
 </svelte:head>
 
-<h1>Examples</h1>
+<h1>
+	Examples<a aria-label="Permalink to 'examples'" class="header-anchor" href="#examples"></a>
+</h1>
 
 <ul>
 	{#each anchors as example}

@@ -65,7 +65,10 @@ onMount((): void => {
 });
 </script>
 
-<h2 id="serialize-restore">Serialize / Restore</h2>
+<h2 id="serialize-restore">
+	Serialize / Restore<a aria-label="Permalink to 'serialize-restore'" class="header-anchor" href="#serialize-restore"
+	></a>
+</h2>
 
 <p>
 	This simple demo stores a copy of the items in a browser's <code>localStorage</code>. Try moving and resizing the

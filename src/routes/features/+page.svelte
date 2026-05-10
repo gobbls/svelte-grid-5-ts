@@ -5,7 +5,9 @@
 	<title>SG5 | Features</title>
 </svelte:head>
 
-<h1 id="features">Features</h1>
+<h1 id="features">
+	Features<a aria-label="Permalink to 'features'" class="header-anchor" href="#features"></a>
+</h1>
 
 <div class="examples">
 	<ul>

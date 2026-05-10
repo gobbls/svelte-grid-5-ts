@@ -92,7 +92,9 @@ function remove(item: Item): void {
 }
 </script>
 
-<h2 id="add-remove">Add / Remove</h2>
+<h2 id="add-remove">
+	Add / Remove<a aria-label="Permalink to 'add-remove'" class="header-anchor" href="#add-remove"></a>
+</h2>
 
 <p>
 	This demo shows what happens when items are dynamically added and removed. You can remove an item by clicking its “x”

@@ -43,7 +43,9 @@ let items: Item[] = $state([
 ]);
 </script>
 
-<h2 id="min-max-size">Min / Max size</h2>
+<h2 id="min-max-size">
+	Min / Max size<a aria-label="Permalink to 'min-max-size'" class="header-anchor" href="#min-max-size"></a>
+</h2>
 
 <p>Control how much a user can resize an item.</p>
 

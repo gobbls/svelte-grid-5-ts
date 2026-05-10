@@ -141,7 +141,9 @@ let items: Item[] = $state([
 ]);
 </script>
 
-<h2 id="responsive">Responsive</h2>
+<h2 id="responsive">
+	Responsive<a aria-label="Permalink to 'responsive'" class="header-anchor" href="#responsive"></a>
+</h2>
 
 <p>
 	<em

@@ -43,7 +43,9 @@ let items: Item[] = $state([
 ]);
 </script>
 
-<h2 id="custom-dragger">Custom Dragger</h2>
+<h2 id="custom-dragger">
+	Custom Dragger<a aria-label="Permalink to 'custom-dragger'" class="header-anchor" href="#custom-dragger"></a>
+</h2>
 
 <p>
 	By setting the <code>customDragger</code> property to <code>true</code>, you may specify the element to which the drag

@@ -41,7 +41,9 @@ onMount(() => {
 });
 </script>
 
-<h2 id="fill-space">Fill Space</h2>
+<h2 id="fill-space">
+	Fill Space<a aria-label="Permalink to 'fill-space'" class="header-anchor" href="#fill-space"></a>
+</h2>
 
 <p>
 	<code>fillSpace</code> means that each grid element (except the active element) must find its own position.

@@ -80,7 +80,9 @@ let gapY = $state(20);
 let gapX = $state(20);
 </script>
 
-<h2 id="gap">Gap</h2>
+<h2 id="gap">
+	Gap<a aria-label="Permalink to 'gap'" class="header-anchor" href="#gap"></a>
+</h2>
 
 <p>In this example we set the gap between rows and columns to 20px.</p>
 

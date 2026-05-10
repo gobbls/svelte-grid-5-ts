@@ -60,7 +60,9 @@ let items: Item[] = $state([
 ]);
 </script>
 
-<h2 id="fixed">Fixed</h2>
+<h2 id="fixed">
+	Fixed<a aria-label="Permalink to 'fixed'" class="header-anchor" href="#fixed"></a>
+</h2>
 
 <p>Fixed elements cannot be moved or resized. Other elements move themselves around it.</p>
 
