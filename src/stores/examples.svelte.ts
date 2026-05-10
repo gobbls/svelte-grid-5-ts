@@ -4,7 +4,7 @@ export let navGroups: Group[] = $state([
 	{
 		title: 'Home',
 		url: '/',
-		open: false,
+		open: true,
 		items: [
 			{
 				title: 'Introduction',
@@ -19,7 +19,7 @@ export let navGroups: Group[] = $state([
 	{
 		title: 'Examples',
 		url: '/examples',
-		open: false,
+		open: true,
 		items: [
 			{
 				title: 'Basic',
@@ -82,23 +82,34 @@ export let navGroups: Group[] = $state([
 	{
 		title: 'Usage',
 		url: '/usage',
-		open: false,
+		open: true,
 		items: [
 			{
-				title: 'What is svelte-grid-5-ts?',
-				anchor: '#what-is-svelte-grid-5-ts'
+				title: 'Basic usage',
+				anchor: '#basic-usage'
+			},
+			{
+				title: 'How to style',
+				anchor: '#how-to-style'
+			},
+			{
+				title: 'Helper functions',
+				anchor: '#helper-functions'
+			},
+			{
+				title: 'Responsiveness',
+				anchor: '#responsiveness'
+			},
+			{
+				title: 'Props',
+				anchor: '#props'
 			}
 		]
 	},
 	{
 		title: 'Features',
 		url: '/features',
-		open: false,
-		items: [
-			{
-				title: 'What is svelte-grid-5-ts?',
-				anchor: '#what-is-svelte-grid-5-ts'
-			}
-		]
+		open: true,
+		items: []
 	}
 ]);
