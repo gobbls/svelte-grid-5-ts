@@ -33,14 +33,13 @@ import SerializeRestore from './SerializeRestore.svelte';
 import SerializeRestoreString from './SerializeRestore.svelte?raw';
 
 const anchors = navGroups.find((t: Group) => t.title == 'Examples')!.items;
-const untab = (svlt: string): string => svlt.replaceAll('\t', '    ');
 </script>
 
 <svelte:head>
 	<title>SG5 | Examples</title>
 </svelte:head>
 
-<h1>
+<h1 id="examples">
 	Examples<a aria-label="Permalink to 'examples'" class="header-anchor" href="#examples"></a>
 </h1>
 
