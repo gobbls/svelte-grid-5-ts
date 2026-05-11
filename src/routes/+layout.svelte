@@ -6,6 +6,7 @@ import { cubicInOut } from 'svelte/easing';
 import { slide } from 'svelte/transition';
 import LeftSidebar from '../components/LeftSidebar.svelte';
 import Header from '../components/Header.svelte';
+import { onMount } from 'svelte';
 
 let { children }: { children: Snippet } = $props();
 
@@ -33,6 +34,16 @@ function dismissModalWithKey(ev: KeyboardEvent) {
 		showLeftModal = false;
 	}
 }
+
+onMount(() => {
+	const { hash } = document.location;
+	if (hash) {
+		const element = document.getElementById(hash.slice(1));
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
+});
 </script>
 
 <svelte:head>
