@@ -16,11 +16,8 @@ let showLeftModal = $state(false);
 let innerWidth: number = $state(0);
 
 const blurPageStyle = $derived(`filter: ${showLeftModal && innerWidth < MOBILE_BREAKPOINT ? 'blur(4px)' : 'none'}`);
-
 const showModal = $derived(showLeftModal && innerWidth <= MOBILE_BREAKPOINT);
-
 const ignoreAction = (ev: MouseEvent) => ev.stopPropagation();
-
 const toggleModalOn = () => (showLeftModal = true);
 
 function dismissModal(ev: MouseEvent) {
