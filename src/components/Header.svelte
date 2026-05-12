@@ -3,6 +3,7 @@ import GithubIcon from './icons/GithubIcon.svelte';
 import MenuIcon from './icons/MenuIcon.svelte';
 import NpmIcon from './icons/NpmIcon.svelte';
 import { resolve } from '$app/paths';
+import { PUBLIC_GITHUB_URL, PUBLIC_NPM_URL } from '$env/static/public';
 
 interface Props {
 	mobile: boolean;
@@ -27,12 +28,12 @@ let { mobile, menuToggle }: Props = $props();
 			{/if}
 		</div>
 		<div class="right">
-			<a href={import.meta.env.VITE_PUBLIC_NPM_URL} target="_blank" class="nav clickable">
+			<a href={PUBLIC_NPM_URL} target="_blank" class="nav clickable">
 				<div class="icon-wrapper" style:width="calc(var(--sg5-header-height) + 18px) !important">
 					<NpmIcon />
 				</div>
 			</a>
-			<a href={import.meta.env.VITE_PUBLIC_GITHUB_URL} target="_blank" class="nav clickable">
+			<a href={PUBLIC_GITHUB_URL} target="_blank" class="nav clickable">
 				<div class="icon-wrapper">
 					<GithubIcon />
 				</div>
