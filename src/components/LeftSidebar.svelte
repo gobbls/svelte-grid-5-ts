@@ -60,7 +60,7 @@ onMount(() => {
 <style>
 .wrapper {
 	box-sizing: border-box;
-	height: 100%;
+	height: 100vh;
 	max-width: var(--sg5-left-sidebar);
 	margin-left: auto;
 	padding: 12px 10px;
