@@ -53,7 +53,8 @@
 		"svelte": "^5.41.0",
 		"svelte-check": "^4.3.3",
 		"typescript": "^5.9.3",
-		"vite": "^7.1.10"
+		"vite": "^7.1.10",
+		"svelte-highlight": "^7.9.0"
 	},
 	"keywords": [
 		"svelte",
@@ -64,8 +65,5 @@
 		"resizable",
 		"fluid",
 		"responsive"
-	],
-	"dependencies": {
-		"svelte-highlight": "^7.9.0"
-	}
+	]
 }
