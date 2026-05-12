@@ -1,8 +1,8 @@
 <script lang="ts">
-import Grid from '../../lib/index.svelte';
-import type { Item, Size } from '../../lib/types/item';
 import { onMount } from 'svelte';
 import { HighlightSvelte } from 'svelte-highlight';
+import Grid from 'svelte-grid-5-ts';
+import type { Item, Size } from 'svelte-grid-5-ts';
 
 const COL = 10;
 const cols = [[1200, COL]];

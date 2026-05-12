@@ -1,12 +1,12 @@
 <script lang="ts">
-import ashes from 'svelte-highlight/styles/ashes';
 import './style.css';
-import type { Snippet } from 'svelte';
+import ashes from 'svelte-highlight/styles/ashes';
 import { cubicInOut } from 'svelte/easing';
 import { slide } from 'svelte/transition';
+import { onMount } from 'svelte';
+import type { Snippet } from 'svelte';
 import LeftSidebar from '../components/LeftSidebar.svelte';
 import Header from '../components/Header.svelte';
-import { onMount } from 'svelte';
 
 let { children }: { children: Snippet } = $props();
 

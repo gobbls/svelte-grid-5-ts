@@ -1,6 +1,3 @@
-<script lang="ts">
-</script>
-
 <svelte:head>
 	<title>SG5 | Features</title>
 </svelte:head>

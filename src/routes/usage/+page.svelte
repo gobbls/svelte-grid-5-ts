@@ -1,6 +1,7 @@
 <script lang="ts">
 import { HighlightSvelte, Highlight } from 'svelte-highlight';
 import { typescript } from 'svelte-highlight/languages';
+import { resolve } from '$app/paths';
 
 import BasicGridString from './_snippets/BasicGrid.svelte?raw';
 import HowToStyleString from './_snippets/HowToStyle.svelte?raw';
@@ -87,8 +88,8 @@ const codeOnPointerUp: string = `interface OnPointerUp {
 	</p>
 
 	<blockquote>
-		The <a href="/examples">examples</a> page has lots of examples with toggles that lets you see the code they are made
-		of!
+		The <a href={resolve('/examples')}>examples</a> page has lots of examples with toggles that lets you see the code they
+		are made of!
 	</blockquote>
 
 	<hr />

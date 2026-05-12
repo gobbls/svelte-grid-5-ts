@@ -1,9 +1,10 @@
 import type { Group } from '../types/routes';
+import { resolve } from '$app/paths';
 
 export let navGroups: Group[] = $state([
 	{
 		title: 'Home',
-		url: '/',
+		url: resolve('/'),
 		open: true,
 		items: [
 			{
@@ -18,7 +19,7 @@ export let navGroups: Group[] = $state([
 	},
 	{
 		title: 'Examples',
-		url: '/examples',
+		url: resolve('/examples/'),
 		open: true,
 		items: [
 			{
@@ -81,7 +82,7 @@ export let navGroups: Group[] = $state([
 	},
 	{
 		title: 'Usage',
-		url: '/usage',
+		url: '/usage/',
 		open: true,
 		items: [
 			{
@@ -112,7 +113,7 @@ export let navGroups: Group[] = $state([
 	},
 	{
 		title: 'Features',
-		url: '/features',
+		url: '/features/',
 		open: true,
 		items: []
 	}

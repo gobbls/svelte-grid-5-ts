@@ -1,7 +1,7 @@
 <script lang="ts">
 import Grid from 'svelte-grid-5-ts';
-import { gridHelp } from 'svelte-grid-5-ts';
 import type { Item } from 'svelte-grid-5-ts';
+import { gridHelp } from 'svelte-grid-5-ts';
 
 const cols: number[][] = [[1200, 6]];
 

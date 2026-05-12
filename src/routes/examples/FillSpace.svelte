@@ -1,9 +1,9 @@
 <script lang="ts">
-import Grid from '../../lib/index.svelte';
-import type { Item, Position } from '../../lib/types/item';
-import { gridHelp } from '$lib';
 import { onMount } from 'svelte';
 import { id, randomNumberInRange } from './util';
+import Grid from 'svelte-grid-5-ts';
+import type { Item, Position } from 'svelte-grid-5-ts';
+import { gridHelp } from 'svelte-grid-5-ts';
 
 const COL = 10;
 const cols = [[1200, COL]];

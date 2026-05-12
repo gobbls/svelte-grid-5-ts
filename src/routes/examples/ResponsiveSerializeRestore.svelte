@@ -1,8 +1,7 @@
 <script lang="ts">
 import { onMount } from 'svelte';
-import Grid from '../../lib/index.svelte';
-import type { Item, Size, Value } from '../../lib/types/item';
-import type { OnMount, OnResize } from '$lib';
+import Grid from 'svelte-grid-5-ts';
+import type { Item, Size, Value, OnMount, OnResize } from 'svelte-grid-5-ts';
 
 const cols = [
 	[750, 5],

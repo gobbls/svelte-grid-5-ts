@@ -1,6 +1,6 @@
 <script lang="ts">
-import type { Item, Size } from '../lib/types/item';
-import Grid from '../lib/index.svelte';
+import Grid from 'svelte-grid-5-ts';
+import type { Item, Size } from 'svelte-grid-5-ts';
 
 const COL = 10;
 const cols = [[200, COL]];

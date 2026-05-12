@@ -38,7 +38,7 @@ const untab = (svlt: string): string => svlt.replaceAll('\t', '    ');
 </p>
 
 <p>
-	SG5 serves as a <em>mostly</em> drop-in replacement for svelte-grid &mdash meaning it's compatible with the same configuration
+	SG5 serves as a <em>mostly</em> drop-in replacement for svelte-grid &mdash; meaning it's compatible with the same configuration
 	created by projects using Svelte-grid, with few exceptions due to the major version bump of Svelte:
 </p>
 
@@ -52,7 +52,7 @@ const untab = (svlt: string): string => svlt.replaceAll('\t', '    ');
 	</li>
 	<li>
 		<p>
-			<strong>SG5 uses TypeScript;</strong> types are publicly available in <code>/types/</code>.
+			<strong>SG5 uses TypeScript;</strong> types are publicly available in <code>svelte-grid-5-ts</code>.
 		</p>
 	</li>
 </ol>
