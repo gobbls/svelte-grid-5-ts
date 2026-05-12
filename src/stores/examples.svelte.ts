@@ -82,7 +82,7 @@ export let navGroups: Group[] = $state([
 	},
 	{
 		title: 'Usage',
-		url: '/usage/',
+		url: resolve('/usage/'),
 		open: true,
 		items: [
 			{
@@ -113,7 +113,7 @@ export let navGroups: Group[] = $state([
 	},
 	{
 		title: 'Features',
-		url: '/features/',
+		url: resolve('/features/'),
 		open: true,
 		items: []
 	}

@@ -4,6 +4,7 @@ import { slide } from 'svelte/transition';
 import { onMount } from 'svelte';
 import { navGroups as groups } from '../stores/examples.svelte';
 import ChevronIcon from './icons/ChevronIcon.svelte';
+import { resolve } from '$app/paths';
 
 interface Props {
 	title: string;
@@ -27,7 +28,7 @@ onMount(() => {
 </script>
 
 <div bind:this={thisModal} class="wrapper" class:modal={modal} tabindex="-1">
-	<a class="nav clickable" href="/">
+	<a class="nav clickable" href="{resolve('/')}">
 		<h2>{title}</h2>
 	</a>
 	<nav>

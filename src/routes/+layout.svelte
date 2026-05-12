@@ -7,6 +7,7 @@ import { onMount } from 'svelte';
 import type { Snippet } from 'svelte';
 import LeftSidebar from '../components/LeftSidebar.svelte';
 import Header from '../components/Header.svelte';
+import { resolve } from '$app/paths';
 
 let { children }: { children: Snippet } = $props();
 

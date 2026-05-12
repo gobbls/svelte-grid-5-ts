@@ -7,7 +7,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		paths: {
-			base: process.env.BASE_PATH || ''
+			base: process.env.VITE_BASE_PATH || ''
 		}
 	}
 };
