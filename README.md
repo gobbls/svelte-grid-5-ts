@@ -2,18 +2,19 @@
     <h1>SG5 — <em>Svelte-Grid-5-TS</em></h1>
     <p>A fork of <a href="https://svelte-grid.vercel.app/">Svelte-grid</a>.</p>
     <img alt="Preview of the moving and shifting functionality" src="/static/preview.gif" />
+    <a href="https://docs.alnyk.net/svelte-grid-5-ts/">Documentation</a>
 </div>
 
 ## Notes
 
 SG5 supersedes Svelte-grid by converting Svelte-grid's codebase from Svelte 3 and JavaScript, to Svelte 5 and TypeScript.
 
-SG5 serves as a mostly drop-in replacement for svelte-grid &mdash meaning it's
+SG5 serves as a _mostly_ drop-in replacement for svelte-grid — meaning it's
 compatible with the same configuration created by projects using Svelte-grid,
 with few exceptions due to the major version bump of Svelte:
 
 1. **Exposed event hooks**; where Svelte-grid uses [eventDispatcher](https://svelte.dev/docs/svelte/svelte#createEventDispatcher), SG5 uses [function props](https://svelte.dev/docs/svelte/$props).
-2. **SG5 uses TypeScript**; types are publicly available in `/types/`.
+2. **SG5 uses TypeScript**; types are publicly available in `svelte-grid-5-ts`, like everything else.
 
 ## Features
 
@@ -178,3 +179,7 @@ Now, with all the steps applied, your example should look like this.
 <div style="text-align: center;">
     <img alt="A preview of the example code above" src="/static/example-preview.png" />
 </div>
+
+---
+
+More examples with previews available [here](https://docs.alnyk.net/svelte-grid-5-ts/)

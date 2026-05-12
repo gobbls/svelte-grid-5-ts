@@ -52,7 +52,7 @@ const untab = (svlt: string): string => svlt.replaceAll('\t', '    ');
 	</li>
 	<li>
 		<p>
-			<strong>SG5 uses TypeScript;</strong> types are publicly available in <code>svelte-grid-5-ts</code>.
+			<strong>SG5 uses TypeScript;</strong> types are publicly available in <code>svelte-grid-5-ts</code>, like everything else.
 		</p>
 	</li>
 </ol>
