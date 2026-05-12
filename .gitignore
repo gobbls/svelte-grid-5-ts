@@ -15,11 +15,8 @@ dist
 Thumbs.db
 
 # Env
-.env
-.env.*
-!.env.production
+.env*
 
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-/.env.production
