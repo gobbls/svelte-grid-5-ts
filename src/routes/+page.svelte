@@ -1,230 +1,136 @@
 <script lang="ts">
-	import Grid from '../lib/index.svelte';
-	import type { Item, Size } from '../lib/types/item';
+import { HighlightSvelte, Highlight } from 'svelte-highlight';
+import typescript from 'svelte-highlight/languages/typescript';
+import CodeExampleToggle from '../components/CodeExampleToggle.svelte';
 
-	const COL = 10;
-	const cols = [[200, COL]];
+import Demo from './Demo.svelte';
+import GettingStartedExampleGrid from './GettingStartedExampleGrid.svelte';
+import GettingStartedExampleGridString from './GettingStartedExampleGrid.svelte?raw';
 
-	let items: Item[] = $state([
-		{
-			id: 'move',
-			data: '',
-			[COL]: {
-				fixed: false,
-				resizable: true,
-				draggable: true,
-				customDragger: false,
-				customResizer: false,
-				min: { w: 1, h: 1 },
-				max: {} as Size,
-				x: 0,
-				y: 0,
-				w: 2,
-				h: 3
-			}
-		},
-		{
-			id: 'some',
-			data: '',
-			[COL]: {
-				fixed: false,
-				resizable: true,
-				draggable: true,
-				customDragger: false,
-				customResizer: false,
-				min: { w: 1, h: 1 },
-				max: {} as Size,
-				x: 2,
-				y: 0,
-				w: 1,
-				h: 1
-			}
-		},
-		{
-			id: 'stuff',
-			data: '',
-			[COL]: {
-				fixed: false,
-				resizable: true,
-				draggable: true,
-				customDragger: false,
-				customResizer: false,
-				min: { w: 1, h: 1 },
-				max: {} as Size,
-				x: 2,
-				y: 1,
-				w: 1,
-				h: 2
-			}
-		},
-		{
-			id: 'around',
-			data: '',
-			[COL]: {
-				fixed: false,
-				resizable: true,
-				draggable: true,
-				customDragger: false,
-				customResizer: false,
-				min: { w: 1, h: 1 },
-				max: {} as Size,
-				x: 8,
-				y: 2,
-				w: 2,
-				h: 1
-			}
-		}
-	]);
+import SpecString from './_snippets/Spec.svelte?raw';
+import ImportsString from './_snippets/Imports.svelte?raw';
+import DivWrapperString from './_snippets/DivWrapper.svelte?raw';
+import BindItemsString from './_snippets/BindItems.svelte?raw';
+import EventPropString from './_snippets/EventProp.svelte?raw';
+import EventHandlerString from './_snippets/EventHandler.svelte?raw';
+import StyleString from './_snippets/Style.svelte?raw';
+
+const untab = (svlt: string): string => svlt.replaceAll('\t', '    ');
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>SG5 | Home</title>
 </svelte:head>
 
-<h1>
-	What is svelte-grid-5-ts?<a
-		aria-label="Permalink to 'What is svelte-grid-5-ts'"
-		class="header-anchor"
-		href="#what-is-svelte-grid-5-ts"
-	></a>
+<h1 id="introduction">
+	Introduction<a aria-label="Permalink to 'introduction'" class="header-anchor" href="#introduction"></a>
 </h1>
+
 <p>
-	<strong>svelte-grid-5-ts</strong> (<strong>SG5</strong>), is a
-	<a
-		href="https://en.wikipedia.org/wiki/Fork_(software_development)"
-		target="_blank">fork</a
-	>
-	of <a href="https://svelte-grid.vercel.app/" target="_blank">svelte-grid</a>
-	(<strong>SG</strong>), converted from Svelte 3 and JavaScript; to
-	<a href="https://svelte.dev/blog/svelte-5-is-alive" target="_blank"
-		>Svelte 5</a
-	>
-	and <a href="https://www.typescriptlang.org/">TypeScript</a>.
+	SG5 &mdash; <em>Svelte-Grid-5-TS</em> &mdash; is a fork of
+	<a href="https://svelte-grid.vercel.app/" target="_blank">Svelte-grid</a>.
 </p>
 
 <p>
-	SG5 serves as a
-	<i>mostly</i> drop-in replacement for SG, meaning it's compatible with the same
-	configuration created by projects using SG, with few exceptions due to the major
-	version bump of Svelte:
+	SG5 supersedes Svelte-grid by converting Svelte-grid's codebase from <em>Svelte 3</em> and <em>JavaScript</em>, to
+	<a href="https://svelte.dev/blog/svelte-5-is-alive" target="_blank"><strong>Svelte 5</strong></a> and
+	<a href="https://www.typescriptlang.org/"><strong>TypeScript</strong></a>.
+</p>
+
+<p>
+	SG5 serves as a <em>mostly</em> drop-in replacement for svelte-grid &mdash; meaning it's compatible with the same configuration
+	created by projects using Svelte-grid, with few exceptions due to the major version bump of Svelte:
 </p>
 
 <ol>
 	<li>
 		<p>
-			Exposed event hooks; where SG uses
-			<a
-				href="https://svelte.dev/docs/svelte/svelte#createEventDispatcher"
-				target="_blank">eventDispatcher</a
-			>, SG5 uses
-			<a href="https://svelte.dev/docs/svelte/$props" target="_blank"
-				>function props</a
-			>.
+			<strong>Exposed event hooks;</strong> where Svelte-grid uses
+			<a href="https://svelte.dev/docs/svelte/svelte#createEventDispatcher" target="_blank">eventDispatcher</a>, SG5
+			uses <a href="https://svelte.dev/docs/svelte/$props" target="_blank">function props</a>.
 		</p>
 	</li>
 	<li>
 		<p>
-			Since SG5 uses TypeScript; types are publicly available in <code
-				>/types/</code
-			>.
+			<strong>SG5 uses TypeScript;</strong> types are publicly available in <code>svelte-grid-5-ts</code>.
 		</p>
 	</li>
 </ol>
 
-<div class="demo">
-	<Grid bind:items {cols} gap={[2, 2]} rowHeight={50} fillSpace={false}>
-		{#snippet children({ dataItem })}
-			<div class="item">{dataItem.id}</div>
-		{/snippet}
-	</Grid>
-</div>
+<Demo />
 
-<style>
-	:global(.demo .svlt-grid-shadow) {
-		border-radius: 5px;
-	}
+<hr />
 
-	h1,
-	p,
-	ol,
-	/*
-	hr,
-	*/
-	.demo {
-		max-width: 760px;
-		margin-left: auto;
-		margin-right: auto;
-		color: var(--c-text-link);
-		font-family: var(--default-font);
-	}
+<h2 id="getting-started">
+	Getting Started<a aria-label="Permalink to 'Getting Started'" class="header-anchor" href="#getting-started"></a>
+</h2>
 
-	h1 {
-		position: relative;
-	}
+<ol>
+	<li>
+		Set up a project:
+		<ol type="a">
+			<li>
+				If you don't already have Svelte 5 installed, <a href="https://svelte.dev/docs/svelte/getting-started"
+					>install it</a
+				>.
+			</li>
+			<li>
+				Install <a href="https://www.npmjs.com/package/svelte-grid-5-ts">SG5</a> with
+				<code>$ npm i svelte-grid-5-ts</code>
+			</li>
+		</ol>
+	</li>
 
-	h1 a.header-anchor {
-		position: absolute;
-		top: 0;
-		left: 0;
-		opacity: 0;
-		margin-left: -0.87em;
-		color: #a8b1ff;
-		font-weight: 500;
-		text-decoration: none;
-		user-select: none;
-		transition:
-			color 0.25s,
-			opacity 0.25s;
-		&:hover {
-			color: #5c73e7;
-		}
-	}
+	<blockquote>
+		All off these steps are done in the same <code>.svelte</code> file.
+	</blockquote>
 
-	h1:hover a.header-anchor {
-		opacity: 1;
-	}
+	<li>
+		Start by importing the main <code>Grid</code> component and the <code>Item, Size</code> types, as well as the
+		<code>OnChange</code> type, as it will be used in this example.
+		<HighlightSvelte code={ImportsString} />
+	</li>
 
-	h1 a.header-anchor::before {
-		content: '#';
-	}
+	<li>
+		Create a<code>div</code> wrapper for the <code>Grid</code> component, it will be handy for listening to its size and
+		target for styling.
+		<HighlightSvelte code={DivWrapperString} />
+	</li>
 
-	p {
-		line-height: 28px;
-		font-synthesis: style;
-		text-rendering: optimizeLegibility;
-		font-weight: 400;
-	}
+	<li>
+		Specify the specs for the grid, then create an array with a single item.
+		<HighlightSvelte code={untab(SpecString)} />
+	</li>
 
-	p a {
-		color: #a8b1ff;
-	}
+	<li>
+		Place the <code>Grid</code> component in the wrapper, bind the items and pass the specs to the component as props.
+		<HighlightSvelte code={untab(BindItemsString)} />
+	</li>
 
-	code {
-		background: var(--c-bg-text-code);
-		padding: 2px 4px;
-		border-radius: 5px;
-	}
+	<li>
+		Add the <code>onChange</code> event prop and pass it a function referance (we'll create the function next). Provide
+		a widget &mdash; a <code>div</code> here, for the sake of example &mdash; as a snippet for the item to render. The
+		<code>children</code>
+		snippet returns multiple properties for us to use. Here, we use the <code>dataItem</code> property to receive the ID
+		of our item to be used in our <code>div</code>.
+		<HighlightSvelte code={untab(EventPropString)} />
+	</li>
 
-	.demo {
-		padding: 5px;
-		border-radius: 10px;
-		background: var(--c-bg-text-code);
-	}
+	<li>
+		Create a function to fire when the event occurs.
+		<Highlight language={typescript} code={untab(EventHandlerString)} />
+	</li>
 
-	.demo .item {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		box-sizing: border-box;
-		color: var(--c-bg-text-code);
-		width: 100%;
-		height: 100%;
-		padding: 2px;
-		border-radius: 5px;
-		background: #a8b1ff;
-		user-select: none;
-		word-break: break-all;
-		overflow: hidden;
-		font-size: clamp(0.4em, 1vw + 0.4em, 1em);
-	}
-</style>
+	<li>
+		To finish off this example, add some styling to the wrapper and your widget.
+		<HighlightSvelte code={untab(StyleString)} />
+
+		Now, with all the steps applied, your example should look like this.
+
+		<blockquote>
+			Open your browser console and move the item around to see the <code>OnChange</code> function run.
+		</blockquote>
+
+		<CodeExampleToggle Example={GettingStartedExampleGrid} asString={GettingStartedExampleGridString} />
+	</li>
+</ol>
