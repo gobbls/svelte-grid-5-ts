@@ -1,10 +1,10 @@
 <script lang="ts">
-import type { Group } from '../types/routes';
-import { slide } from 'svelte/transition';
 import { onMount } from 'svelte';
-import { navGroups as groups } from '../stores/examples.svelte';
-import ChevronIcon from './icons/ChevronIcon.svelte';
+import { slide } from 'svelte/transition';
 import { resolve } from '$app/paths';
+import type { Group } from '../types/routes';
+import { navGroups as groups } from '../stores/navigation.svelte';
+import ChevronIcon from './icons/ChevronIcon.svelte';
 
 interface Props {
 	title: string;

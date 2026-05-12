@@ -1,5 +1,5 @@
 <script lang="ts">
-import { navGroups } from '../../stores/examples.svelte';
+import { navGroups } from '../../stores/navigation.svelte';
 import type { Group } from '../../types/routes';
 import CodeExampleToggle from '../../components/CodeExampleToggle.svelte';
 
