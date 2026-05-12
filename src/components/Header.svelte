@@ -47,18 +47,19 @@ header > .wrapper {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	max-width: var(--sg5-page-max-width);
+	gap: 10px;
 }
 
 header > .wrapper > .left,
 header .wrapper .right {
 	display: flex;
 	flex-direction: row;
-	padding: 0 10px;
 }
 
 header > .wrapper > .left > a > h2#navbar-title {
 	margin: 0 0 0 10px;
 	white-space: nowrap;
+	font-size: 1em;
 }
 
 header > .wrapper > .right {
