@@ -3,7 +3,7 @@
 	"license": "MIT",
 	"description": "A responsive, draggable and resizable grid layout written in TypeScript and Svelte 5, for Svelte 5.",
 	"author": "gobbls https://github.com/gobbls/svelte-grid-5-ts",
-	"version": "1.0.111",
+	"version": "1.0.200",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run prepack",
