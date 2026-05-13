@@ -8,5 +8,8 @@
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"strict": true
-	}
+	},
+	"exclude": [
+		"**/_snippets/*"
+	]
 }
