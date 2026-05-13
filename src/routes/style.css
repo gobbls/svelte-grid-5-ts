@@ -235,6 +235,7 @@ article code {
 	padding: 2px 4px;
 	border-radius: 5px;
 	font-size: 1.2em;
+	scrollbar-width: thin;
 }
 
 table pre {
@@ -269,6 +270,7 @@ article .demo {
 	margin-top: 20px;
 	border-radius: 10px;
 	background: var(--sg5-c-bg-text-code);
+	scrollbar-width: thin;
 }
 
 article .demo .content {

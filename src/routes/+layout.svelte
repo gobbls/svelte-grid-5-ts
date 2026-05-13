@@ -89,6 +89,7 @@ onMount(() => {
 	grid-template-rows: var(--sg5-header-height) 1fr;
 	height: 100vh;
 	transition: filter 200ms ease;
+	scrollbar-width: none;
 }
 
 .page > main {
@@ -97,6 +98,8 @@ onMount(() => {
 	grid-column: span 2 / span 2;
 	grid-row: span 2 / span 2;
 	overflow-y: scroll;
+	scrollbar-width: thin;
+	scrollbar-color: var(--sg5-c-dark-text-1) var(--sg5-c-dark-base);
 }
 
 .page > main > article {

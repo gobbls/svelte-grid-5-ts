@@ -67,6 +67,7 @@ onMount(() => {
 	padding: 12px 10px;
 	background: var(--sg5-c-bg-left-sidebar);
 	overflow-y: scroll;
+	scrollbar-width:none;
 }
 
 .wrapper.modal {
