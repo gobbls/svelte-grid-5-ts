@@ -2,7 +2,7 @@
     <h1>SG5 — <em>Svelte-Grid-5-TS</em></h1>
     <p>A fork of <a href="https://svelte-grid.vercel.app/">Svelte-grid</a>.</p>
     <img alt="Preview of the moving and shifting functionality" src="/static/preview.gif" />
-    <a href="https://docs.alnyk.net/svelte-grid-5-ts/">Documentation</a>
+    <a href="https://docs.alnyk.net/svelte-grid-5-ts/">Documentation</a> • <a href="https://www.npmjs.com/package/svelte-grid-5-ts">NPM</a>
 </div>
 
 ## Notes
