@@ -1,6 +1,6 @@
 <div align="center">
     <h1>SG5 — <em>Svelte-Grid-5-TS</em></h1>
-    <p>A fork of <a href="https://svelte-grid.vercel.app/">Svelte-grid</a>.</p>
+    <p>A fork of <a href="https://github.com/valqelyan/svelte-grid">Svelte-grid</a>.</p>
     <img alt="Preview of the moving and shifting functionality" src="/static/preview.gif" />
     <a href="https://docs.alnyk.net/svelte-grid-5-ts/">Documentation</a> • <a href="https://www.npmjs.com/package/svelte-grid-5-ts">NPM</a>
 </div>
@@ -182,4 +182,4 @@ Now, with all the steps applied, your example should look like this.
 
 ---
 
-More examples with previews available [here](https://docs.alnyk.net/svelte-grid-5-ts/)
+More examples with previews available [here](https://docs.alnyk.net/svelte-grid-5-ts/examples/)
